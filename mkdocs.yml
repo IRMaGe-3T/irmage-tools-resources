@@ -2,8 +2,9 @@ site_name: Neuroimaging tools resources
 site_url: https://populse.github.io/neuroimaging-tools-resources
 nav:
     - Home: index.md
-    - BIDS: BIDS.md
-    - mriqc: mriqc.md
+    - Users documentation:
+      - BIDS: users/BIDS.md
+      - mriqc: users/mriqc.md
     - 'Tips for developers':
       - Sphinx documentation: developers/doc-sphinx.md 
       - Code snippets Python: developers/code-snippets-python.md 
