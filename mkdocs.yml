@@ -1,0 +1,13 @@
+site_name: MkLorum
+site_url: https://example.com/
+nav:
+    - Home: index.md
+    - BIDS: BIDS.md
+    - mriqc: mriqc.md
+    - 'Tips for developers':
+      - Sphinx documentation: developers/doc-sphinx.md 
+      - Code snippets Python: developers/code-snippets-python.md 
+      - Github Pull request: developers/github-pullrequest.md
+      - Deployment of a python project: developers/packaging-python-projects.md
+      - Use virtual environment example: developers/use-virtual-env-example.md
+theme: readthedocs
