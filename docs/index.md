@@ -17,7 +17,8 @@ However, the scope of this inventory goes far beyond populse, but it will contai
         developers/
             code-snippets-python.md
             doc-sphinx.md
-            github-pullrequest.md
+            github.md
+            installation-cuda.md
             packaging-python-projects.md
             use-virtual-env-example.md
 

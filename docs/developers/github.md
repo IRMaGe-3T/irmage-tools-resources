@@ -1,5 +1,43 @@
-One way to apply a pull request (there are others !!!)
-=================
+# Github information 
+
+## Personal access token
+
+[Personal access]((https://docs.github.com/en/authentication/keeping-your-account-and-data-secure/creating-a-personal-access-token)) tokens are an alternative to using passwords for authentication to GitHub when using command line. 
+
+**Create a token:**
+
+- Connect to [Github web interface](https://github.com/)
+
+- Go to **Settings** page (the menu at the top right), then in **Developer seetings** and finally in **Personal access tokens** 
+
+- Create a token by clicking on **Generate new token** in **Tokens (classic)**. Give a name. 
+
+- If you want to use this token to use github operations on your computer (use commit, push...), check "repo".
+
+- Make sure to copy your personal access token. You won’t be able to see it again! If you loose it you need to create a new one.
+
+**Store the token in your computer:** 
+
+- Run the command:
+```
+git config --global credential.helper store
+``` 
+
+This should modify the ~/.gitconfig file by adding the following lines:  [credential] helper = store
+
+- Create a file ~/.git-credentials, containing: https://{login github}:{token}@github.com
+ 
+- Add user name and email in .gitconfig. For the email use the email configured in github. If email privacy is enabled use the email provided by Github for Git operations (e.g : "4542githublogin@users.noreply.github.com")
+
+```
+git config --global user.name "Surname Name"
+git config --global user.mail "4542githublogin@users.noreply.github.com"
+```
+
+
+## Pull request
+
+It is one way to apply a pull request (there are others !!!)
 
 1. Make a fresh fork:
     * Go to the project to fork (for ex. populse/populse_mia).

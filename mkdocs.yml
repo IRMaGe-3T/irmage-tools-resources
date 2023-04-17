@@ -8,7 +8,8 @@ nav:
     - 'Tips for developers':
       - Sphinx documentation: developers/doc-sphinx.md 
       - Code snippets Python: developers/code-snippets-python.md 
-      - Github Pull request: developers/github-pullrequest.md
+      - Github: developers/github.md
       - Deployment of a python project: developers/packaging-python-projects.md
       - Use virtual environment example: developers/use-virtual-env-example.md
+      - Cuda installation: developers/installation-cuda.md
 theme: readthedocs
