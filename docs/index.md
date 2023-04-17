@@ -14,8 +14,10 @@ However, the scope of this inventory goes far beyond populse, but it will contai
         users/
             BIDS.md
             mriqc.md
+            resources.md
         developers/
             code-snippets-python.md
+            doc-mkdocs.md
             doc-sphinx.md
             github.md
             installation-cuda.md

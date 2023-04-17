@@ -1,6 +1,6 @@
 
 # Sphinx quick tutorial
-[Sphinx](http://www.sphinx-doc.org/en/master/index.html) can be used to [documenting Your Project Using Sphinx](https://pythonhosted.org/an_example_pypi_project/sphinx.html).
+[Sphinx](http://www.sphinx-doc.org/en/master/index.html) can be used to [documenting your project](https://pythonhosted.org/an_example_pypi_project/sphinx.html).
  
 Sphinx uses the reStructuredText markup language by default, and can read MyST markdown via third-party extensions.
 
@@ -11,8 +11,9 @@ Note: Change below, `populse_mia` by the repository name.
 pip3 install sphinx
 ```
 
-### In populse_mia's root folder
+### Create docs folder
 ```
+cd populse_mia/
 mkdir docs/
 cd docs/
 ```

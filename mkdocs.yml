@@ -5,9 +5,11 @@ nav:
     - Users documentation:
       - BIDS: users/BIDS.md
       - mriqc: users/mriqc.md
+      - Resources: users/resources.md
     - 'Tips for developers':
-      - Sphinx documentation: developers/doc-sphinx.md 
-      - Code snippets Python: developers/code-snippets-python.md 
+      - Code snippets - Python: developers/code-snippets-python.md
+      - Documentation - MKDocs : developers/doc-mkdocs.md 
+      - Documentation - Sphinx: developers/doc-sphinx.md  
       - Github: developers/github.md
       - Deployment of a python project: developers/packaging-python-projects.md
       - Use virtual environment example: developers/use-virtual-env-example.md
