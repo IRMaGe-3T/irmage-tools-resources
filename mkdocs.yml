@@ -2,16 +2,16 @@ site_name: Neuroimaging tools resources
 site_url: https://populse.github.io/neuroimaging-tools-resources
 nav:
     - Home: index.md
-    - Users documentation:
+    - 'Users documentation':
+      - Resources: users/resources.md
       - BIDS: users/BIDS.md
       - mriqc: users/mriqc.md
-      - Resources: users/resources.md
     - 'Tips for developers':
       - Code snippets - Python: developers/code-snippets-python.md
+      - Deployment of a python project: developers/packaging-python-projects.md
       - Documentation - MKDocs : developers/doc-mkdocs.md 
       - Documentation - Sphinx: developers/doc-sphinx.md  
       - Github: developers/github.md
-      - Deployment of a python project: developers/packaging-python-projects.md
-      - Use virtual environment example: developers/use-virtual-env-example.md
-      - Cuda installation: developers/installation-cuda.md
+      - Use virtual environment - example: developers/use-virtual-env-example.md
+      - Software installation - Cuda: developers/installation-cuda.md
 theme: readthedocs
