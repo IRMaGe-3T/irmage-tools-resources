@@ -21,7 +21,7 @@ This commandes create a Mkdocs configuration file (`mkdocs.yml`) and a mindex ma
 
 You can add [Markdowns](https://daringfireball.net/projects/markdown/) files (.md) in the docs folder and [configure page and navigation](https://www.mkdocs.org/user-guide/writing-your-docs/).
 
-All the pages should be added to the `index.md` file and the `mkdocs.yml` should be updated. 
+All the pages should be added to the `index.md` file and the `nav` (navigation) part of `mkdocs.yml` file should be updated. 
 
 `index.md` file example:
 ```

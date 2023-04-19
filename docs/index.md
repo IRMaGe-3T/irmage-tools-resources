@@ -6,6 +6,16 @@ This wiki is hosted by the populse's team.
 [Populse](https://populse.github.io/) is a project aimed to provide pipeline calculation tools to the neuroimaging community. 
 However, the scope of this inventory goes far beyond populse, but it will contain a lot of information necessary to use populse.
 
+## How to contribute to the project ? 
+
+* Clone [github project](https://github.com/populse/neuroimaging-tools-resources)
+
+* Add or modify [markdown](https://daringfireball.net/projects/markdown/) (.md) files 
+
+* Add new files in `index.md` and update the `nav` (navigation) part of `mkdocs.yml` file.
+
+* Commit and push your modifications. The documentation will automatically update thanks to ReadTheDocs. 
+
 ## Project layout
 
     mkdocs.yml
