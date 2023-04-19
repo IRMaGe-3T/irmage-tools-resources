@@ -24,7 +24,7 @@ See [Python Packaging User Guide](https://packaging.python.org/tutorials/packagi
 
 2- Make sure you have the latest versions of setuptools, wheel and twine installed:
 
-```
+```bash
 pip3 install --user --upgrade setuptools wheel twine
 ```
 
