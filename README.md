@@ -6,3 +6,12 @@ All information are gather here : https://neuroimaging-tools-resources.readthedo
 
 Please note that this wiki did not aim to be self-sufficient, it is always a good practice to check the software documentation
 
+## How to contribute to the project ? 
+
+* Clone [github project](https://github.com/populse/neuroimaging-tools-resources)
+
+* Add or modify [markdown](https://daringfireball.net/projects/markdown/) (.md) files 
+
+* Add new files in `index.md` and update the `nav` (navigation) part of `mkdocs.yml` file.
+
+* Commit and push your modifications. The documentation will automatically update thanks to ReadTheDocs. 
