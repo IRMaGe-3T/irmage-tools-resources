@@ -138,5 +138,45 @@ Create the BIDS structure : `dcm2bids_scaffold -o OUTPUT_DIR`
 Run dcm2bids: `dcm2bids -d DICOM_DIR -p PARTICIPANT_ID -c CONFIG_FILE -o OUTPUT_DIR`
 
 If your config file is precise enough, your data should be now organized in BIDS.
-If not you should add more crietria in your config file. 
-You can remove the `tmp` folder create in the OUTOUT_DIR.
+
+You can check the data not renamed (and so not integreted in your BIDS databse) in the `tmp` folder create in the OUTOUT_DIR.
+If you want to included some of this data in your BIDS database you should add more crietria in your config file. 
+
+#### How to do in practice for a big dataset ? 
+
+There are several methods to run dcm2bids quickly on several subject, here is one:
+
+- Organise your DICOM data as follows (where "subject1" is the desired name in the BIDS architecture): 
+```
+├──DICOM_sourcedata/
+|   ├──subject1/
+|   |   ├──DICOM/
+|   ├──subject2/
+|   |   ├──DICOM/
+|   ├──subject3/
+|   |   ├──DICOM/
+|   ├──subject4/
+|   |   ├──DICOM/
+```
+
+- Create your config file, your BIDS directory and structure as explain above. 
+
+- Use this python code:
+```
+import glob
+import os
+
+CONFIG_FILE = '/home/username/dataset_bids/config.json'
+OUTPUT_DIR = '/home/username/dataset_bids'
+DICOM = glob.glob('/home/username/DICOM_sourcedata/*/*')
+
+for folder in DICOM:
+    if os.path.isdir(folder):
+        id_sub = folder.split('/')[-2].replace('_','')
+
+        cmd = 'dcm2bids -d ' + folder + ' -p ' + id_sub + \
+            ' -c ' + CONFIG_FILE + ' -o ' + OUTPUT_DIR
+            
+        os.system(cmd)
+```
+

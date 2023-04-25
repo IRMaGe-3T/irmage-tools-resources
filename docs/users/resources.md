@@ -27,6 +27,7 @@ Please note that this resources are not exhaustive.
 - [Andy's Brain Book](https://andysbrainbook.readthedocs.io/en/latest/) and [Andy's brain videaos](https://www.andysbrainblog.com/videos): tutorial abour fMRI processing and others neuroimaging tools 
 - [mumforbrainstats](https://www.youtube.com/@mumfordbrainstats): video about fMRI processing by Jeanner Mumford
 - [pratciCal fMRI blog](https://practicalfmri.blogspot.com/): a blog with tips about fMRI
+- [Analysis principles - Unviversity of Cambridge](https://imaging.mrc-cbu.cam.ac.uk/imaging/AnalysisPrinciples): a blog with tips about fMRI analysis (and SPM)
 
 ## MRI Quality Control 
 - [mriqc](https://mriqc.readthedocs.io/): quality control of functional fMRI and structural (T1w and T2w) data, extraction of no-reference IQMs (image quality metrics). See also [here](mriqc.md)
