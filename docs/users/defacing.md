@@ -15,6 +15,7 @@ Note that, not all software give the same result according to the poulation (you
 If the defacing of a image or of a cohort worked poorly with one software, it can be usefull to test others.
 
 Some articles compare several software and study the impact of defacing on analysis:
+
 - [Multisite Comparison of MRI Defacing Software Across Multiple Cohorts](https://www.frontiersin.org/articles/10.3389/fpsyt.2021.617997/full) 
 - [Impact of defacing on automated brain atrophy estimation](https://insightsimaging.springeropen.com/articles/10.1186/s13244-022-01195-7)
 - [Systematic evaluation of the impact of defacing on quality and volumetric assessments on T1-weighted MR-images](https://www.sciencedirect.com/science/article/abs/pii/S0150986121000559)
