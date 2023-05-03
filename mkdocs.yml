@@ -6,6 +6,7 @@ nav:
       - Resources: users/resources.md
       - BIDS: users/BIDS.md
       - mriqc: users/mriqc.md
+      - Defacing: users/defacing.md
     - 'Tips for developers':
       - Code snippets - Python: developers/code-snippets-python.md
       - Deployment of a python project: developers/packaging-python-projects.md

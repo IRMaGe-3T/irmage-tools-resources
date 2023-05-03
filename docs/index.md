@@ -22,9 +22,11 @@ However, the scope of this inventory goes far beyond populse, but it will contai
     docs/
         index.md
         users/
+            defacing.md
             BIDS.md
             mriqc.md
             resources.md
+
         developers/
             code-snippets-python.md
             doc-mkdocs.md
