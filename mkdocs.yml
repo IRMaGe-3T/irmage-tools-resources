@@ -1,5 +1,5 @@
-site_name: Neuroimaging tools resources
-site_url: https://populse.github.io/neuroimaging-tools-resources
+site_name: IRMaGE - Neuroimaging tools resources
+site_url: https://irmage-tools-resources.readthedocs.io/
 nav:
     - Home: index.md
     - 'Users documentation':
