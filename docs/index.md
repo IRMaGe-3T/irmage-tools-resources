@@ -31,6 +31,7 @@ If you are comfortable with Github:
             defacing.md
             BIDS.md
             mriqc.md
+            populse_mia_fMRI.md
             resources.md
 
         developers/
@@ -41,4 +42,8 @@ If you are comfortable with Github:
             installation-cuda.md
             packaging-python-projects.md
             use-virtual-env-example.md
+        examples/
+            fmri_face_spm/
+                pipeline_face_spm_categorical_stats.py
+
 

@@ -7,6 +7,7 @@ nav:
       - BIDS: users/BIDS.md
       - mriqc: users/mriqc.md
       - Defacing: users/defacing.md
+      - Populse_mia fMRI analysis: users/populse_mia_fMRI.md
     - 'Tips for developers':
       - Code snippets - Python: developers/code-snippets-python.md
       - Deployment of a python project: developers/packaging-python-projects.md
