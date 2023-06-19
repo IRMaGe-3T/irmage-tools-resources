@@ -169,7 +169,7 @@ We will used the subject 08 of the dataset.
 
 **a. data Import**
 
-- Create a mia project under the name `flanker_test`
+- Create a mia project under the name `flanker_task`
 
 - Import the NIfTI data.  
 
@@ -213,7 +213,7 @@ You can also create your own pre-processing pipeline using the different bricks 
 
     For others parameters, leave the defaul settings. 
     Launch the brick. A SPM.mat file will be created
-    Parameters can be found [here](https://github.com/populse/irmage-tools-resources/tree/main/docs/examples/fmri_flanker_test/params_flanker_task_sub08_Level1Design.json).
+    Parameters can be found [here](https://github.com/populse/irmage-tools-resources/tree/main/docs/examples/fmri_flanker_task/params_flanker_task_sub08_Level1Design.json).
 
 - Open the [EstimateModel](https://populse.github.io/mia_processes/html/documentation/documentation.html) brick and complete the following field:
     - `spm_mat_file` : select the file created by the Level1Design brick
@@ -232,7 +232,7 @@ You can also create your own pre-processing pipeline using the different bricks 
 
     For others parameters, leave the defaul settings. 
     Launch the brick. T and F contrasts will be created. 
-    Parameters can be found [here](https://github.com/populse/irmage-tools-resources/tree/main/docs/examples/fmri_flanker_test/params_flanker_task_sub08_EstimateContrast.json).
+    Parameters can be found [here](https://github.com/populse/irmage-tools-resources/tree/main/docs/examples/fmri_flanker_task/params_flanker_task_sub08_EstimateContrast.json).
 
-It is also possible to create a [pipeline with the three bricks](https://github.com/populse/irmage-tools-resources/tree/main/docs/examples/fmri_flanker_test/pipeline_flanker_task_sub08_stats.py).
+It is also possible to create a [pipeline with the three bricks](https://github.com/populse/irmage-tools-resources/tree/main/docs/examples/fmri_flanker_task/pipeline_flanker_task_sub08_stats.py).
 
