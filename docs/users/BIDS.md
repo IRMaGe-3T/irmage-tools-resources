@@ -87,51 +87,42 @@ Install dcm2bids using pip :
 
 Dependencies : 
 
-[dcm2niix](https://github.com/rordenlab/dcm2niix) should be installed and dcm2niix path should be included in your $PATH (in your .bashr) or if you feel comfortable you can change the dcm2niix path in the dcm2bids code(in dcm2bids/dcm2nnix.py ligne 98 `commandTpl = "pathtodcm2niix {} -o {} {}"`)
+[dcm2niix](https://github.com/rordenlab/dcm2niix) should be installed and dcm2niix path should be included in your $PATH (in your .bashr)
 
 
 #### Use 
 You will need to have a directory with your subject DICOM (DICOM_DIR, one folder by subject) 
-Create your [config file](https://unfmontreal.github.io/Dcm2Bids/docs/how-to/create-config-file/). 
-Each description in this file tells dcm2bids how to group a set of acquisitions and how to label them.
-You can used several criteria (that corresponds to json field) to describe your acquisition (SeriesDescription, EchoTime, ImageType..)  
 
-Example of config file (BIDS_config.json): 
+Create your [config file](https://unfmontreal.github.io/Dcm2Bids/3.1.0/how-to/create-config-file/). 
+Each description in this file tells dcm2bids how to group a set of acquisitions and how to label them.
+You can used several criteria (that corresponds to json field in the json creating by dcm2niix) to describe your acquisition (SeriesDescription, EchoTime, ImageType..)  
+
+Example of a simple config file (BIDS_config.json): 
 ```
 {
     "descriptions": [
         {
-            "dataType": "anat",
-            "modalityLabel": "T2w",
+            "datatype": "anat",
+            "suffix": "T1w",
             "criteria": {
-                "SeriesDescription": "*T2*",
+                "SeriesDescription": "*3DT1*",
                 "EchoTime": 0.1
-            },
-            "sidecarChanges": {
-                "ProtocolName": "T2"
             }
         },
         {
-            "dataType": "func",
-            "modalityLabel": "bold",
-            "customLabels": "task-rest",
+            "datatype": "func",
+            "suffix": "bold",
+            "custom_entities": "task-rest",
             "criteria": {
-                "SidecarFilename": "006*"
-            }
-        },
-        {
-            "dataType": "fmap",
-            "modalityLabel": "fmap",
-            "intendedFor": 1,
-            "criteria": {
-                "ProtocoleName": "*field_mapping*"
+                "ProtocolName": "func_task-*",
+                "ImageType": ["ORIG*", "PRIMARY", "M", "MB", "ND", "MOSAIC"]
             }
         }
     ]
 }
 ```
 
-Create your BIDS directory: `mkdir OUTPUT_DIR`
+Create your BIDS directory (OUTOUT_DIR): `mkdir OUTPUT_DIR`
 
 Create the BIDS structure : `dcm2bids_scaffold -o OUTPUT_DIR`
 
@@ -139,7 +130,7 @@ Run dcm2bids: `dcm2bids -d DICOM_DIR -p PARTICIPANT_ID -c CONFIG_FILE -o OUTPUT_
 
 If your config file is precise enough, your data should be now organized in BIDS.
 
-You can check the data not renamed (and so not integreted in your BIDS databse) in the `tmp` folder create in the OUTOUT_DIR.
+You can check the data not renamed (and so not integreted in your BIDS databse) in the `tmp_dcm2bids` folder create in the OUTOUT_DIR.
 If you want to included some of this data in your BIDS database you should add more crietria in your config file. 
 
 #### How to do in practice for a big dataset ? 

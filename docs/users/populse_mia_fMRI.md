@@ -24,7 +24,9 @@ for f in func:
    img = nibabel.load(f)
    nibabel.save(img, f.replace('.img','.nii'))
 
-nibabel.concat_images(func)
+func_nii = glob.glob('/home/username/face_rep/RawEPI/*.nii')
+
+nibabel.save(nibabel.concat_images(func_nii), '/home/username/face_rep/Structural/func.nii')
 ```
 
 The stimulus onset times and lag are in a '.mat' file, here is a way to get them in a list using python :

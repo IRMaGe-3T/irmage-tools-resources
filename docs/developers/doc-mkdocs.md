@@ -60,4 +60,4 @@ mkdocs serve
 
 It builds all your Markdown files into HTML and create a development server. 
 Open up http://127.0.0.1:8000/ in your web browser to see your documentation. 
-If your are chnaging your Markdown files, the dics will be automatically rebuild in your development server.
+If your are changing your Markdown files, the dics will be automatically rebuild in your development server.
