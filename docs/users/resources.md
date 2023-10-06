@@ -26,6 +26,7 @@ Please note that this resources are not exhaustive.
 ## Data Viewer
 - [Anatomist](https://brainvisa.info/web/anatomist.html): data visualization and library of high-level neuroimaging graphical components.
 - [FSLeyes](https://fsl.fmrib.ox.ac.uk/fsl/fslwiki/FSLeyes): image viewer.
+- [mrview](https://mrtrix.readthedocs.io/en/latest/reference/commands/mrview.html): MRTrix image viewer
 
 ## General information about neuroimaging software
 - [Neuroimaging Tools & Resources Collaboratory (NITRC)](https://www.nitrc.org/) : a website that offers comprehensive information on an ever expanding scope of neuroinformatics software and data. You can find a lot of software and usefull link in the Resources Registry part. 
@@ -36,7 +37,12 @@ Please note that this resources are not exhaustive.
 - [Nipype](https://nipype.readthedocs.io/en/latest/): a Python project that provides a uniform interface to existing neuroimaging software and facilitates interaction between these packages within a single workflow. Nipype provides an environment that encourages interactive exploration of algorithms from different packages (e.g., ANTS, SPM, FSL, FreeSurfer, Camino, MRtrix, MNE, AFNI, Slicer, DIPY)
 
 ## Functional MRI
-- [Andy's Brain Book](https://andysbrainbook.readthedocs.io/en/latest/) and [Andy's brain videaos](https://www.andysbrainblog.com/videos): tutorial abour fMRI processing and others neuroimaging tools 
+- [Andy's Brain Book](https://andysbrainbook.readthedocs.io/en/latest/) and [Andy's brain videos](https://www.andysbrainblog.com/videos): tutorial abour fMRI processing and others neuroimaging tools 
 - [mumforbrainstats](https://www.youtube.com/@mumfordbrainstats): video about fMRI processing by Jeanner Mumford
 - [pratciCal fMRI blog](https://practicalfmri.blogspot.com/): a blog with tips about fMRI
 - [Analysis principles - Unviversity of Cambridge](https://imaging.mrc-cbu.cam.ac.uk/imaging/AnalysisPrinciples): a blog with tips about fMRI analysis (and SPM)
+
+## Diffusion MRI
+- [Andy's Brain Book](https://andysbrainbook.readthedocs.io/en/latest/MRtrix/MRtrix_Introduction.html): tutorial about diffusion processing with [MRTrix](https://mrtrix.readthedocs.io/en/latest/)
+- [B.A.T.M.A.M tutorial](https://osf.io/fkyht/): tutorial about diffusion processing (tractography) with [MRTrix](https://mrtrix.readthedocs.io/en/latest/)
+- [MRTrix user documentation](https://mrtrix.readthedocs.io/en/latest/) with many explanations
