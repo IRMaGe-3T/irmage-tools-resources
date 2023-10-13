@@ -79,7 +79,7 @@ You can also create your own pre-processing pipeline using the different bricks 
     For others parameters, leave the defaul settings. 
     Launch the brick. A SPM.mat file will be created
     
-    Parameters can be found [here](https://github.com/populse/irmage-tools-resources/tree/main/docs/examples/fmri_face_spm/params_face_spm_categorical_Level1Design.json)
+    Parameters can be found [here](https://github.com/populse/irmage-tools-resources/tree/main/code_examples/populse_mia_processes/fmri_face_spm/params_face_spm_categorical_Level1Design.json)
 
 - Open the [EstimateModel](https://populse.github.io/mia_processes/html/documentation/documentation.html) brick and complete the following field:
     - `spm_mat_file` : select the file created by the Level1Design brick
@@ -93,9 +93,9 @@ You can also create your own pre-processing pipeline using the different bricks 
     The SPM.mat file will be updateted and images of estimated regression coefficient (beta), image os the variance error (ResMS), image of the estimated resolution elements per voxel (RPV) and a mask image indicating which voxels were included in the analysis will be created. 
     As we used Factorial Design option, T and F contrasts will be also created. 
     
-    Parameters can be found [here](https://github.com/populse/irmage-tools-resources/tree/main/docs/params_face_spm_categorical_EstimateModel.json).
+    Parameters can be found [here](https://github.com/populse/irmage-tools-resources/tree/main/code_examples/populse_mia_processes/params_face_spm_categorical_EstimateModel.json).
 
-It is also possible to create a [pipeline with the two bricks](https://github.com/populse/irmage-tools-resources/tree/main/docs/examples/fmri_face_spm/pipeline_face_spm_categorical_stats.py).
+It is also possible to create a [pipeline with the two bricks](https://github.com/populse/irmage-tools-resources/tree/main/code_examples/populse_mia_processes/fmri_face_spm/pipeline_face_spm_categorical_stats.py).
 
 ### 3. Parametric responses 
 **a. data Import**
@@ -133,7 +133,7 @@ You can also create your own pre-processing pipeline using the different bricks 
     For others parameters, leave the defaul settings. 
     Launch the brick. A SPM.mat file will be created
     
-    Parameters can be found [here](https://github.com/populse/irmage-tools-resources/tree/main/docs/examples/fmri_face_spm/params_face_spm_parametric_Level1Design.json).
+    Parameters can be found [here](https://github.com/populse/irmage-tools-resources/tree/main/code_examples/populse_mia_processes/fmri_face_spm/params_face_spm_parametric_Level1Design.json).
 
 - Open the [EstimateModel](https://populse.github.io/mia_processes/html/documentation/documentation.html) brick and complete the field as for categorical responses.
     For others parameters, leave the defaul settings and launch the brick. 
@@ -141,7 +141,7 @@ You can also create your own pre-processing pipeline using the different bricks 
     The SPM.mat file will be updateted and images of estimated regression coefficient (beta), image os the variance error (ResMS), image of the estimated resolution elements per voxel (RPV) and a mask image indicating which voxels were included in the analysis will be created. 
     As we used Factorial Design option, T and F contrasts will be also created. 
     
-    Parameters can be found [here](https://github.com/populse/irmage-tools-resources/tree/main/docs/examples/fmri_face_spm/params_face_spm_parametric_EstimateModel.json).
+    Parameters can be found [here](https://github.com/populse/irmage-tools-resources/tree/main/code_examples/populse_mia_processes/fmri_face_spm/params_face_spm_parametric_EstimateModel.json).
 
 - To create F-contrast in populse_mia, we first need to create the T-contrasts used to create the F-contrast.  Open the [EstimateContrast](https://populse.github.io/mia_processes/html/documentation/documentation.html) brick and complete the following field:
     - `spm_mat_file` : select the file SPM.mat updated by the EstimateModel brick
@@ -157,7 +157,7 @@ You can also create your own pre-processing pipeline using the different bricks 
     Launch the brick. T and F contrasts will be created. 
     Parameters can be found [here](/docs/examples/fmri_face_spm/params_face_spm_parametric_EstimateContrast.json).
 
-It is also possible to create a [pipeline with the three bricks](https://github.com/populse/irmage-tools-resources/tree/main/docs/examples/fmri_face_spm/pipeline_face_spm_parametric_stats.py "download").
+It is also possible to create a [pipeline with the three bricks](https://github.com/populse/irmage-tools-resources/tree/main/code_examples/populse_mia_processes/fmri_face_spm/pipeline_face_spm_parametric_stats.py "download").
 
 
 ## Flanker task dataset 
@@ -215,14 +215,14 @@ You can also create your own pre-processing pipeline using the different bricks 
 
     For others parameters, leave the defaul settings. 
     Launch the brick. A SPM.mat file will be created
-    Parameters can be found [here](https://github.com/populse/irmage-tools-resources/tree/main/docs/examples/fmri_flanker_task/params_flanker_task_sub08_Level1Design.json).
+    Parameters can be found [here](https://github.com/populse/irmage-tools-resources/tree/main/code_examples/populse_mia_processes/fmri_flanker_task/params_flanker_task_sub08_Level1Design.json).
 
 - Open the [EstimateModel](https://populse.github.io/mia_processes/html/documentation/documentation.html) brick and complete the following field:
     - `spm_mat_file` : select the file created by the Level1Design brick
     
     For others parameters, leave the defaul settings and launch the brick. 
     The SPM.mat file will be updateted and images of estimated regression coefficient (beta), image os the variance error (ResMS), image of the estimated resolution elements per voxel (RPV) and a mask image indicating which voxels were included in the analysis will be created. 
-    Parameters can be found [here](https://github.com/populse/irmage-tools-resources/tree/main/docs/examples/fmri_flanker_task/params_flanker_task_sub08_EstimateModel.json).
+    Parameters can be found [here](https://github.com/populse/irmage-tools-resources/tree/main/code_examples/populse_mia_processes/fmri_flanker_task/params_flanker_task_sub08_EstimateModel.json).
 
 - To create F-contrast in populse_mia, we first need to create the T-contrasts used to create the F-contrast.  Open the [EstimateContrast](https://populse.github.io/mia_processes/html/documentation/documentation.html) brick and complete the following field:
     - `spm_mat_file` : select the file SPM.mat updated by the EstimateModel brick
@@ -234,7 +234,7 @@ You can also create your own pre-processing pipeline using the different bricks 
 
     For others parameters, leave the defaul settings. 
     Launch the brick. T and F contrasts will be created. 
-    Parameters can be found [here](https://github.com/populse/irmage-tools-resources/tree/main/docs/examples/fmri_flanker_task/params_flanker_task_sub08_EstimateContrast.json).
+    Parameters can be found [here](https://github.com/populse/irmage-tools-resources/tree/main/code_examples/populse_mia_processes/fmri_flanker_task/params_flanker_task_sub08_EstimateContrast.json).
 
-It is also possible to create a [pipeline with the three bricks](https://github.com/populse/irmage-tools-resources/tree/main/docs/examples/fmri_flanker_task/pipeline_flanker_task_sub08_stats.py).
+It is also possible to create a [pipeline with the three bricks](https://github.com/populse/irmage-tools-resources/tree/main/code_examples/populse_mia_processes/fmri_flanker_task/pipeline_flanker_task_sub08_stats.py).
 
