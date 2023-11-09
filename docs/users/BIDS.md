@@ -11,7 +11,7 @@ Moreover, [several software](https://bids-apps.neuroimaging.io/apps/ ) take a BI
 You can follow [BIDS starter kit](https://bids-standard.github.io/bids-starter-kit/) to learn about BIDS. 
 
 Note that BIDS specifications are not perfect and may be not detailed enough for complex dataset, so you may have to adapt a little bit BIDS specifications for complex dataset. 
-You can also participated to [extend BIDS specification]( https://bids.neuroimaging.io/get_involved.html) (for example for MRS data or CT data). 
+You can also participated to [extend BIDS specification]( https://bids.neuroimaging.io/get_involved.html) (for example for CT data). 
 
 [BIDS specification](https://bids-specification.readthedocs.io/en/stable/) define how a dataset should be organized. 
 
@@ -61,7 +61,7 @@ Example for one subject with one session :
 |   |   |   ├──sub-0010001AA_ses-M00_run-1_FLAIR.nii.gz
 |   |   |   ├──sub-0010001AA_ses-M00_run-1_FLAIR.json
 |   |   ├──func/
-|   |   |   ├───sub-0010001AA_ses-M00_task-rs_run-1_bold.nii.gz
+|   |   |   ├──sub-0010001AA_ses-M00_task-rs_run-1_bold.nii.gz
 |   |   |   ├──sub-0010001AA_ses-M00_task-rs_run-1_bold.json
 |   |   ├──dwi/
 |   |   |   ├──sub-0010001AA_ses-M00_run-1_dwi.nii.gz
@@ -69,6 +69,12 @@ Example for one subject with one session :
 |   |   |   ├──sub-0010001AA_ses-M00_run-1_dwi.bvec
 |   |   |   ├──sub-0010001AA_ses-M00_run-1_dwi.json
 ```
+
+Note that there is specific recomendation for [field map data](https://bids-specification.readthedocs.io/en/stable/04-modality-specific-files/01-magnetic-resonance-imaging-data.html#fieldmap-data) and for [ASL data](https://bids-specification.readthedocs.io/en/stable/04-modality-specific-files/01-magnetic-resonance-imaging-data.html#arterial-spin-labeling-perfusion-data).
+
+## Validate BIDS folder
+
+Before to use your dataset with a BIDS-apps, you can use the [BIDS validator](https://bids-standard.github.io/bids-validator/) to ensure that your data are BIDS-compilant.
 
 ## Convert dataset in BIDS format
 

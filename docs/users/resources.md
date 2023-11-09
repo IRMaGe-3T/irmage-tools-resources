@@ -30,6 +30,7 @@ Please note that this resources are not exhaustive.
 
 ## General information about neuroimaging software
 - [Neuroimaging Tools & Resources Collaboratory (NITRC)](https://www.nitrc.org/) : a website that offers comprehensive information on an ever expanding scope of neuroinformatics software and data. You can find a lot of software and usefull link in the Resources Registry part. 
+- [Neurostars](https://neurostars.org/) :  a question and answer forum for neuroscience researchers, infrastructure providers and software developers. 
 
 ## Software suite
 - [BrainVisa](https://brainvisa.info/web/): neuroimaging software platform for mass data analysis. Contains software as Morphologist (brain segmentation and sulcal analysis)

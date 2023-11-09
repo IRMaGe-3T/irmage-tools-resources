@@ -1,13 +1,15 @@
 # Welcome to the wiki of the IRMaGe platform!
 
 The aim of this wiki is to identify the information that seems necessary and important, around the processing of the data, at the moment mainly oriented towards MRI. 
-Some information are destinated to the users of the [IRMaGe platform](https://irmage.univ-grenoble-alpes.fr/).
+Some information are destinated to the users of the [IRMaGe platform](https://irmage.univ-grenoble-alpes.fr/) and therefore several items concern cerebral MRI performed with a Philips scanner.
 
 This is only the beginning of this work. We do not intend to be exhaustive, and there will necessarily be a more or less arbitrary choice made to offer what seems important without falling into an enumeration that would lose all interest for the reader.
 
 This wiki is hosted on Github by the populse's team. 
 [Populse](https://populse.github.io/) is a project aimed to provide pipeline calculation tools to the neuroimaging community. 
 However, the scope of this inventory goes far beyond populse, but it will contain a lot of information necessary to use populse.
+
+If you would like to use any of the platform's equipment or discuss a project with thhe IRMaGe team, please consult the contact information on the [IRMaGE website](https://irmage.univ-grenoble-alpes.fr/en-pratique/contacts).
 
 ## How to contribute to the project ? 
 
@@ -19,7 +21,7 @@ If you are comfortable with Github:
 
 * Add new files in `index.md` and update the `nav` (navigation) part of `mkdocs.yml` file.
 
-* Commit and push your modifications. The documentation will automatically update thanks to ReadTheDocs. 
+* Commit and push your modifications. The documentation will automatically update thanks to [ReadTheDocs](https://readthedocs.org/). 
 
 
 ## Project layout
@@ -31,9 +33,10 @@ If you are comfortable with Github:
             defacing.md
             BIDS.md
             mriqc.md
-            populse_mia_fMRI.md
             resources.md
-
+            conversionToNifti.md
+        populse_mia_tutorial/
+            populse_mia_fMRI.md
         developers/
             code-snippets-python.md
             doc-mkdocs.md
@@ -42,8 +45,8 @@ If you are comfortable with Github:
             installation-cuda.md
             packaging-python-projects.md
             use-virtual-env-example.md
-        examples/
+    code_examples/
+        populse_mia_processes/
             fmri_face_spm/
-                pipeline_face_spm_categorical_stats.py
-
+            fmri_flanker_task/
 

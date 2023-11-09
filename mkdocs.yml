@@ -2,12 +2,14 @@ site_name: IRMaGE - Neuroimaging tools resources
 site_url: https://irmage-tools-resources.readthedocs.io/
 nav:
     - Home: index.md
-    - 'Users documentation':
+    - 'Tips for users':
       - Resources: users/resources.md
+      - DICOM / NIfTI: users/conversionToNifti.md
       - BIDS: users/BIDS.md
-      - mriqc: users/mriqc.md
+      - Quality Control - MRIQC: users/mriqc.md
       - Defacing: users/defacing.md
-      - Populse_mia fMRI analysis: users/populse_mia_fMRI.md
+    - 'Tutorials POPULSE MIA':
+      - fMRI analysis: populse_mia_tutorial/populse_mia_fMRI.md
     - 'Tips for developers':
       - Code snippets - Python: developers/code-snippets-python.md
       - Deployment of a python project: developers/packaging-python-projects.md
