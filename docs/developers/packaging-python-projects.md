@@ -43,14 +43,14 @@ python3 setup.py sdist bdist_wheel # From the same directory where setup.py is l
 
 * On Test PyPI:
 
-  ```bash
-  python3 -m twine upload --repository-url https://test.pypi.org/legacy/ dist/* # From /Git_Projects/example_pkg/
-  ```
+```bash
+python3 -m twine upload --repository-url https://test.pypi.org/legacy/ dist/* # From /Git_Projects/example_pkg/
+```
 
 * On the real Python Package Index:
 
-  ```bash
-  python3 -m twine upload dist/* # From /Git_Projects/example_pkg/
-  ```
+    ```bash
+    python3 -m twine upload dist/* # From /Git_Projects/example_pkg/
+    ```
 
 5- To avoid problems in the future, delete the `/Git_Projects/example_pkg/dist/`, `/Git_Projects/example_pkg/build/` and `/Git_Projects/example_pkg/example_pkg.egg-info/` directories.
