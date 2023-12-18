@@ -3,6 +3,7 @@
 See [Python Packaging User Guide](https://packaging.python.org/tutorials/packaging-projects/) documenation
 
 ## Quick tutorial
+
 1- Creating the package files:
 
 * Create/edit the `setup.py` (build script for setuptools).
@@ -30,7 +31,7 @@ pip3 install --user --upgrade setuptools wheel twine
 
 3- Generating distribution archives:
 
-```
+```bash
 python3 setup.py sdist bdist_wheel # From the same directory where setup.py is located
 ```
 
@@ -42,13 +43,13 @@ python3 setup.py sdist bdist_wheel # From the same directory where setup.py is l
 
 * On Test PyPI:
 
-  ```
+  ```bash
   python3 -m twine upload --repository-url https://test.pypi.org/legacy/ dist/* # From /Git_Projects/example_pkg/
   ```
 
 * On the real Python Package Index:
 
-  ```
+  ```bash
   python3 -m twine upload dist/* # From /Git_Projects/example_pkg/
   ```
 
