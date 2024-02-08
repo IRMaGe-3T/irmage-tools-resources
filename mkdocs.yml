@@ -9,6 +9,7 @@ nav:
       - Quality Control - MRIQC: users/mriqc.md
       - Defacing: users/defacing.md
     - 'Tutorials POPULSE MIA':
+      - POPULSE: populse_mia_tutorial/populse.md
       - fMRI analysis: populse_mia_tutorial/populse_mia_fMRI.md
     - 'Tips for developers':
       - Code snippets - Python: developers/code-snippets-python.md
