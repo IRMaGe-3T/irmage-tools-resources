@@ -21,30 +21,3 @@ If you are comfortable with Github:
 * Commit and push your modifications. The documentation will automatically update thanks to [ReadTheDocs](https://readthedocs.org/). 
 
 
-## Project layout
-
-    mkdocs.yml
-    docs/
-        index.md
-        users/
-            defacing.md
-            BIDS.md
-            mriqc.md
-            resources.md
-            conversionToNifti.md
-        populse_mia_tutorial/
-            populse_mia_fMRI.md
-            populse_mia.md
-        developers/
-            code-snippets-python.md
-            doc-mkdocs.md
-            doc-sphinx.md
-            github.md
-            installation-cuda.md
-            packaging-python-projects.md
-            use-virtual-env-example.md
-    code_examples/
-        populse_mia_processes/
-            fmri_face_spm/
-            fmri_flanker_task/
-

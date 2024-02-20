@@ -8,6 +8,7 @@ nav:
       - BIDS: users/BIDS.md
       - Quality Control - MRIQC: users/mriqc.md
       - Defacing: users/defacing.md
+      - Dwi processing: users/dwi_processing.md
     - 'Tutorials POPULSE MIA':
       - POPULSE: populse_mia_tutorial/populse.md
       - fMRI analysis: populse_mia_tutorial/populse_mia_fMRI.md
