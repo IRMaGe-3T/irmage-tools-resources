@@ -164,9 +164,9 @@ Short bibliography:
 - Jeurissen, Ben, Maxime Descoteaux, Susumu Mori, and Alexander Leemans. “Diffusion MRI Fiber Tractography of the Brain.” NMR in Biomedicine 32, no. 4 (2019): e3785. https://doi.org/10.1002/nbm.3785.
 - Andica, Christina, Koji Kamagata, and Shigeki Aoki. “Automated Three-Dimensional Major White Matter Bundle Segmentation Using Diffusion Magnetic Resonance Imaging.” Anatomical Science International 98, no. 3 (July 1, 2023): 318–36. https://doi.org/10.1007/s12565-023-00715-9.
 
-The aim of tractograpy (= fiber tracking) is to connect voxels based on their principal diffusion direction and their anisotopy to obtain main white matter bundles. 
+The aim of tractograpy (= fiber tracking) is to connect voxels based on their principal diffusion direction and their anisotropy to obtain main white matter bundles. 
 
-There are several tracking approaches (deterministic vs propabilistic, global vs local, Anatomically-Constrained Tractography...), they can produce very different tractograms. See the following article for more detail information [“Diffusion MRI Fiber Tractography of the Brain.”](https://doi.org/10.1002/nbm.3785). 
+There are several tracking approaches (deterministic vs probabilistic, global vs local, Anatomically-Constrained Tractography...), they can produce very different tractograms. See the following article for more detail information [“Diffusion MRI Fiber Tractography of the Brain.”](https://doi.org/10.1002/nbm.3785). 
 
 #### Example of tools 
 
