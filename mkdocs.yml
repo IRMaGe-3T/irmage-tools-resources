@@ -4,6 +4,7 @@ nav:
     - Home: index.md
     - 'Tips for users':
       - Resources: users/resources.md
+      - Software used by IRMaGe team: users/irmage_soft_list.md
       - DICOM / NIfTI: users/conversionToNifti.md
       - BIDS: users/BIDS.md
       - Quality Control - MRIQC: users/mriqc.md

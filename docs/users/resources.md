@@ -49,3 +49,7 @@ Please note that this resources are not exhaustive.
 - [Andy's Brain Book](https://andysbrainbook.readthedocs.io/en/latest/MRtrix/MRtrix_Introduction.html): tutorial about diffusion processing with [MRTrix](https://mrtrix.readthedocs.io/en/latest/)
 - [B.A.T.M.A.M tutorial](https://osf.io/fkyht/): tutorial about diffusion processing (tractography) with [MRTrix](https://mrtrix.readthedocs.io/en/latest/)
 - [MRTrix user documentation](https://mrtrix.readthedocs.io/en/latest/) with many explanations
+
+
+## Spectroscopy
+- [MRShub](https://mrshub.org/software_analysis/#Gannet): collection of resources for magnetic resonance spectroscopy 
