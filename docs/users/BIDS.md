@@ -141,39 +141,27 @@ If you want to included some of this data in your BIDS database you should add m
 
 #### How to do in practice for a big dataset ? 
 
-There are several methods to run dcm2bids quickly on several subject, here is one:
+There are several methods to run dcm2bids quickly on several subjects, here is one:
 
 - Organise your DICOM data as follows (where "subject1" is the desired name in the BIDS architecture): 
 ```
 ├──DICOM_sourcedata/
 |   ├──subject1/
-|   |   ├──DICOM/
+|   |   ├──01/
+|   |   |   ├──DICOM/
+|   |   ├──02/
+|   |   |   ├──DICOM/
 |   ├──subject2/
-|   |   ├──DICOM/
-|   ├──subject3/
-|   |   ├──DICOM/
-|   ├──subject4/
-|   |   ├──DICOM/
+|   |   ├──01/
+|   |   |   ├──DICOM/
+|   |   ├──02/
+|   |   |   ├──DICOM/
 ```
 
 - Create your config file, your BIDS directory and structure as explain above. 
 
-- Use this python code:
+- Use the python code in the [IRMaGE-3T github repository](https://github.com/IRMaGe-3T/irmage-tools/blob/main/data_management/bids_data_with_dcm2bids.py): 
 ```
-import glob
-import os
-
-CONFIG_FILE = '/home/username/dataset_bids/config.json'
-OUTPUT_DIR = '/home/username/dataset_bids'
-DICOM = glob.glob('/home/username/DICOM_sourcedata/*/*')
-
-for folder in DICOM:
-    if os.path.isdir(folder):
-        id_sub = folder.split('/')[-2].replace('_','')
-
-        cmd = 'dcm2bids -d ' + folder + ' -p ' + id_sub + \
-            ' -c ' + CONFIG_FILE + ' -o ' + OUTPUT_DIR
-            
-        os.system(cmd)
+    python bids_data_with_dcm2bids.py -s /DICOM_sourcedata/ -o /output_bids_direcory/ -c config_file_dcm2bids.jsob
 ```
 
