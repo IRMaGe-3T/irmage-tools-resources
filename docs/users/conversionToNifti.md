@@ -30,8 +30,7 @@ The Neuroimaging Informatics Technology Initiative (NIfTI) is an open file forma
 
 There are specificities for each manufacturer (for example image scaling or information in json file), for Philips data please see [here](https://github.com/rordenlab/dcm2niix/blob/master/Philips/README.md).
 
-Note that Philips DICOM do not contains some information as slice timing, phase encoding direction or total readout time.
-
+Note that Philips DICOM do not contains some information as slice timing, phase encoding direction or total readout time (see [here](tips_philips.md)).
 
 If you want to organize your data in BIDS format, please see [here](BIDS.md)
 
