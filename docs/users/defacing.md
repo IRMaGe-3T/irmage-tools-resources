@@ -2,19 +2,19 @@
 
 For research project on human, it is important to de-identify MRI data and metadata (no identifying data as name, date of birth, adresses...). 
 
-If your want to share your data outside your lab or outside a consortium, this deidentification can be insuffisante because anatomical data may allow to identy a subject (by reconstructing the skin surface). 
+If your want to share your data outside your lab or outside a consortium, this deidentification can be insuffisante because anatomical data may allow to identify a subject (by reconstructing the skin surface). Indentification of a person from a anatmical MRI was shown to be a feasible task (for e.g,[Abramian, D (2019)](https://ieeexplore.ieee.org/document/8759515)).
 
-In this case, it is necessary to "deface" the anatomical data, i.e blur or delete the voxels of the face (while preserving the brain voxel).
+Three main approaches for face de-identification have been proposed: 
 
-This defacing is imposed by some data sharing platforms such as OpenNeuro.
+- defacing : completely or partially removing facial features (while preserving the brain voxel)
 
-There are severals de-identification software: [mri_deface](https://surfer.nmr.mgh.harvard.edu/fswiki/mri_deface), [pydeface](https://github.com/poldracklab/pydeface), [quickshear](https://github.com/nipy/quickshear), [mridefacer](https://github.com/mih/mridefacer), [afni_refacer](https://afni.nimh.nih.gov/pub/dist/doc/program_help/@afni_refacer_run.html), [deepdefacer](https://pypi.org/project/deepdefacer/).
+- refacing: changing the facial features or defacing and inserting a new face
 
-Some defacing software can struggle to deface some images and can remove brain voxels.  So it is important to do a quality check of the defecing results. 
-Note that, not all software give the same result according to the poulation (yound, edrely ..).
-If the defacing of a image or of a cohort worked poorly with one software, it can be usefull to test others.
+- blurring using spatial filters
 
-Some articles compare several software and study the impact of defacing on analysis:
+This face de-identification is imposed by some data sharing platforms such as OpenNeuro.
+
+The question of the impact of the face de-identification on the outcomes of image processing remains unclear. Some articles compare several software and study the impact of defacing on analysis:
 
 - [Multisite Comparison of MRI Defacing Software Across Multiple Cohorts](https://www.frontiersin.org/articles/10.3389/fpsyt.2021.617997/full) 
 
@@ -22,7 +22,14 @@ Some articles compare several software and study the impact of defacing on analy
 
 - [Systematic evaluation of the impact of defacing on quality and volumetric assessments on T1-weighted MR-images](https://www.sciencedirect.com/science/article/abs/pii/S0150986121000559)
 
-It seems that defacing can affect significantly volumetric and quality measures. 
+It seems that defacing can alter volumetric and quality measures. The studies shows different conclusions about significance of this impact. In comparison to defacing, it seems that the refacing mitigates the impact on image post-processing results, 
+
+
+There are severals de-identification software: [mri_deface](https://surfer.nmr.mgh.harvard.edu/fswiki/mri_deface), [pydeface](https://github.com/poldracklab/pydeface), [quickshear](https://github.com/nipy/quickshear), [mridefacer](https://github.com/mih/mridefacer), [afni_refacer](https://afni.nimh.nih.gov/pub/dist/doc/program_help/@afni_refacer_run.html), [deepdefacer](https://pypi.org/project/deepdefacer/).
+
+Some face de-identification software can struggle with some images and can remove brain voxels. So it is important to do a quality check of the defecing results. 
+Note that, not all software give the same result according to the poulation (young, elderly person...).
+If the defacing of a image or of a cohort worked poorly with one software, it can be usefull to test others.
 
 ## BIDSonym
 
