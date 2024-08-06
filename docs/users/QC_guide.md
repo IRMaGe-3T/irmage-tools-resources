@@ -61,7 +61,7 @@ One solution is to report the information in an Excel spreadsheet, with a column
 In case of doubt or if the visual report is not precise enough, open the image in a specific viewer and review the different slices / dynamics.
 
 
-### Proposed Quality Control Steps for structural T1w MRI
+### Structural T1w MRI
 
 In this section, we consider a non-contrast T1 anatomical sequence.
 
@@ -94,7 +94,7 @@ Look atthe first mosaic ("Zoomed-in mosaic view of the brain") in the report.
 /!\ *When you're not an expert, it can be very difficult to see the difference between injected and non-injected sequences.*
 
 ![T1w with and without gadolinium](images/qc_T1w_gadolinium.png "T1w with and without gadolinium")
-**Figure** : * **A1**: T1W without gadolinium **A2**: Gadolinium-injected T1w (from https://doi.org/10.1016/j.media.2021.102219.) **A3**: Gadolinium-injected T1w*.
+**Figure** :  **A1**: *T1W without gadolinium* **A2**: *Gadolinium-injected T1w (from https://doi.org/10.1016/j.media.2021.102219.)* **A3**: *Gadolinium-injected T1w*.
 
 
 #### B. Incomplete brain coverage or abnormal subject positioning (subject rotation)
@@ -112,7 +112,35 @@ Depending on the planned analysis on the anatomical sequence, it may be acceptab
 It is important to know the areas of interest in the study (or the subjects' pathology). For example, if the aim of the study is to segment the hippocampus, movement artifacts in the hippocampus will require the image to be excluded, whereas movement artifacts in the cerebellum will not.
 
 ![T1w with movements](images/qc_movements.png "T1w with movement")
-**Figure** : * **A and B**: Wrinkles, the image is not necessarily to be excluded, it depends on the analyses planned **C**:Movement is very important (wrinkles + blur), to be excluded if segmentation analyses are to be carried out.*.
+**Figure**: **A and B**: *Wrinkles, the image is not necessarily to be excluded, it depends on the analyses planned* **C**: *Movement is very important (wrinkles + blur), to be excluded if segmentation analyses are to be carried out.*
+
+We can also sometimes observe a so-called "Gibbs" artifact (truncation artifact), which is sometimes difficult to distinguish from motion (which is why it is discussed here in the same exclusion criterion). 
+This artifact generates fine lines at high-contrast interfaces. 
+
+![T1w with Gibbs artifact](images/qc_gibbs.png "T1w with Gibbs atifact")
+
+**Figure**: *Gibbs artifact (from https://doi.org/10.1007/978-3-030-85413-3_102)*
+
+
+#### D. Significant signal loss (susceptibility artifact) or in a critical area for the study
+
+Look at the first mosaic in the report ("Zoomed-in mosaic view of the brain"). 
+
+Susceptibility artefacts due to the non-uniformity of the field are mainly present at air/tissue interfaces or close to metallic objects and result in a loss of signal. The regions most affected are the prefrontal cortex and the region near the ear cavities.
+
+![T1w suceptibility atifact](images/qc_T1w_suceptibility.png "T1w suceptibility atifact")
+
+**Figure**: **a**. *Very slight susceptibility artefact near the ear cavities (the brain appears to be slightly nibbled), there is no need to exclude the image.* **b**. *Susceptibility artefact near the teeth caused by a metal object. This does not affect the brain, there is no need to exclude the image*
+
+#### E. Eye artifacts encroaching on the brain
+
+#### F. Significant non-uniformity of intensity (bias inhomogeneity)
+#### G. Background noise or folding ghost artifact with an impact on the brain
+#### H. Very low gray/white matter contrast
+#### I. Inconsistent segmentations
+#### J. Poor alignment in MNI
+#### K. Unexpected anatomical anomalies/pathologies not accounted for by the protocol
+#### L. Others
 
 
 
