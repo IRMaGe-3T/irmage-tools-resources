@@ -1,12 +1,14 @@
-# mriqc
+# MRIQC
 
 ## Introduction
 
-[mriqc](https://mriqc.readthedocs.io/) is a BIDS-App for quality control of functional fMRI and structural (T1w and T2w) data. mriqc extracts no-reference IQMs (image quality metrics).
+[MRIQC](https://mriqc.readthedocs.io/) is a BIDS-App for quality control of functional fMRI and structural (T1w and T2w) data. MRIQC extracts no-reference IQMs (image quality metrics).
 
-mriqc works only with input data in [BIDS](BIDS.md) format.
+The aim of MRIQC is to extract image quality metrics (metrics without reference, i.e. that cannot be compared to a reference value for measurement since there is no ground truth about what that number should be). A visual report with mosaic views of a number of cutting planes and additional information is also obtained.
 
-The [workflows](https://mriqc.readthedocs.io/en/latest/workflows.html) are described in mriqc documentation and the code is on [github](https://github.com/nipreps/mriqc).
+MRIQC works only with input data in [BIDS](BIDS.md) format.
+
+The [workflows](https://mriqc.readthedocs.io/en/latest/workflows.html) are described in MRIQC documentation and the code is on [github](https://github.com/nipreps/mriqc).
 
 There are some workflows's differences between the different versions, so the IQMs of the same image can vary if you are using different version.
 Always use the same version to process a cohort. 
@@ -14,18 +16,18 @@ Always use the same version to process a cohort.
 ## Installation and usage
 ### Usage
 
-mriqc can be run on specific subjects using --participant-label or --session-id options.
+MRIQC can be run on specific subjects using --participant-label or --session-id options.
 
 There are also some specific options for functional MRI workflow configuration.
 
-Find all options in [mriqc documentation](https://mriqc.readthedocs.io/en/latest/running.html) or using -h option.
+Find all options in [MRIQC documentation](https://mriqc.readthedocs.io/en/latest/running.html) or using -h option.
 
-### mriqc with docker
+### MRIQC with docker
 
-It is the quickest way to run mriqc if you already have Docker installed. 
+It is the quickest way to run MRIQC if you already have Docker installed. 
 The docker image can be found [here](https://hub.docker.com/r/nipreps/mriqc/tags) (old docker version can be found [here](https://hub.docker.com/r/poldracklab/mriqc/tags)).
 
-Pull the latest version of the mriqc container from Docker Hub:
+Pull the latest version of the MRIQC container from Docker Hub:
 
 ```
 docker pull nipreps/mriqc:latest
@@ -33,7 +35,7 @@ docker pull nipreps/mriqc:latest
 
 Notes: depending on how docker is installed on your computer you may need administrator rights to pull and use the imgage
 
-Check the mriqc version:
+Check the MRIQC version:
 
 ```
 docker run -it nipreps/mriqc:latest --version
@@ -41,14 +43,16 @@ docker run -it nipreps/mriqc:latest --version
 
 Run: 
 ```
-docker run -it --rm -v bids-root/:/data:ro -v /output-folder/:/out nipreps/mriqc:latest /data /out participant --participant_label 001
+docker run -it --rm --user 2001:2001 -v /path_to_bids_folder:/data -v /path_to_bids_folder/derivatives/mriqc:/out -v /path_to_tmp_folder/work_tpm:/work nipreps/mriqc:23.1.0 /data /out participant  -w /work --no-sub --verbose-reports
+
 ```
+The "--verbose-reports" option provides full reports. 
 
 ### "Bare-metal" installation
 
-It should be used only for specific reasons (specific tests, issue with docker, get intermediate images computed by mriqc..). It required to install several dependencies as FSL, AFNI, ANTs and freesurfer and some specifics libraries versions are needed. So you may have software/ package versions issues depending on what libraries are installed on your computer.
+It should be used only for specific reasons (specific tests, issue with docker, get intermediate images computed by MRIQC..). It required to install several dependencies as FSL, AFNI, ANTs and freesurfer and some specifics libraries versions are needed. So you may have software/ package versions issues depending on what libraries are installed on your computer.
 
-Installation of mriqc using pip : 
+Installation of MRIQC using pip : 
 ```
 pip3 install --user mriqc
 ```
@@ -69,8 +73,8 @@ Run:
 mriqc bids-root/ output-folder/ participant
 ```
 
-### mriqc in MIA (populse mia)
-If you are using MIA software it is possible to run mriqc pipeline in MIA. 
+### MRIQC in MIA (populse mia)
+If you are using MIA software it is possible to run MRIQC pipeline in MIA. 
 It required to install MIA software and several dependencies as FSL, AFNI, ANTs and freesurfer. 
 
 Launch MIA and configure libraries (AFNI, ANTS, Freesurfer and FSL) in preferences. 
@@ -83,6 +87,26 @@ Some no-reference IQMs are extracted in the final stage of all processing workfl
 See here https://mriqc.readthedocs.io/en/latest/measures.html for explanations about each IQMs. 
 
 As it is no-reference IQMs they cannot be compared to a reference value for the metric since there is no ground-truth about what this number should be.
+
+These metrics are available at the end of each report in the "Reproducibility and provenance information/Extracted Image quality metrics (IQMs)" section. 
+
+It is quite difficult to interpret most of the metrics obtained for a single subject. It is, however, useful to compare them for subjects in the same study/group. 
+A group report can be obtained with the following command:
+
+```
+docker run -it --rm --user 2001:2001 -v /path_to_bids_folder:/data -v /path_to_bids_folder/derivatives/mriqc:/out -v /path_to_tmp_folder/work_tpm:/work nipreps/mriqc:23.1.0 /data /out group 
+```
+
+A ".tsv" file with all the metrics for all the subjects and a visual report that makes it easier to compare the values are obtained. 
+
+Outliers may indicate problematic data.
+Note that, it's important to compare metrics for similar sequences from the same MRI machine! Some metrics are sensitive to changes in machine and parameters.
+
+Example of the difference in metric values between a 1.5T and a 3T MRI machine (in blue 1.5T and in red 3T):  
+![differences 1.5 T vs 3T](images/mriqc_15T_3T.png)
+
+Some of the metrics are also sensitive to clinical characteristics (e.g. pathology) or demographic characteristics (e.g. age).
+
 
 The table below summarize the definitions of the IQMs in a more user-friendly definitions and an help to interpret them (table creating by the [mriqception team](https://github.com/elizabethbeard/mriqception/))
 
