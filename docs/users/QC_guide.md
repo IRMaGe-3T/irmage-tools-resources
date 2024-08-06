@@ -61,7 +61,7 @@ One solution is to report the information in an Excel spreadsheet, with a column
 In case of doubt or if the visual report is not precise enough, open the image in a specific viewer and review the different slices / dynamics.
 
 
-# Proposed Quality Control Steps for structural T1w MRI
+### Proposed Quality Control Steps for structural T1w MRI
 
 In this section, we consider a non-contrast T1 anatomical sequence.
 
