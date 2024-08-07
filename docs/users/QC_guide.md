@@ -74,33 +74,35 @@ Some criteria are based on the images available in the MRIQC report (alignment i
 |    | Descriptions
  -- | -- 
 A |Gadolinium-injected sequence
-B |Incomplete brain coverage or abnormal subject positioning (subject rotation)
+B |Non-compliant brain coverage according to the protocol or abnormal subject positioning (subject rotation)
 C |Significant movement artifacts (“wrinkles” or “blur” or cortex duplication) or in a critical area for the study
 D |Significant signal loss (susceptibility artifact) or in a critical area for the study
-E |Eye artifacts encroaching on the brain
+E |Eye artifacts spill over to the brain
 F |Significant non-uniformity of intensity (bias inhomogeneity)
 G |Background noise or folding ghost artifact with an impact on the brain
 H |Very low gray/white matter contrast
 I |Inconsistent segmentations
 J |Poor alignment in MNI
-K |Unexpected anatomical anomalies/pathologies not accounted for by the protocol
-L |Others
+K |Unexpected anatomical anomalies/pathologies not covered by the protocol
+L |Other artifacts
 
 How to check each criteria is detailed below with examples. 
 
 #### A. Gadolinium-injected sequence
-Look atthe first mosaic ("Zoomed-in mosaic view of the brain") in the report.
+Look at the first mosaic ("Zoomed-in mosaic view of the brain") in the report.
 
 /!\ *When you're not an expert, it can be very difficult to see the difference between injected and non-injected sequences.*
 
 ![T1w with and without gadolinium](images/qc_T1w_gadolinium.png "T1w with and without gadolinium")
+
 **Figure** :  **A1**: *T1W without gadolinium* **A2**: *Gadolinium-injected T1w (from https://doi.org/10.1016/j.media.2021.102219.)* **A3**: *Gadolinium-injected T1w*.
 
 
-#### B. Incomplete brain coverage or abnormal subject positioning (subject rotation)
-Look at the first mosaic in the report ("Zoomed-in mosaic view of the brain"), in particular the extreme sections (bottom and top of the brain) and the sagittal mosaic, which allows you to quickly see whether or not the brain is fully covered. 
+#### B. Non-compliant brain coverage according to the protocol or abnormal subject positioning (subject rotation)
 
 /!\ *In the case of certain studies, total non-coverage of the brain may be deliberate, so check the acquisition protocol.* 
+
+Look at the first mosaic in the report ("Zoomed-in mosaic view of the brain"), in particular the extreme sections (bottom and top of the brain) and the sagittal mosaic, which allows you to quickly see whether or not the brain is fully covered. 
 
 #### C.Significant movement artifacts (“wrinkles” or “blur” or cortex duplication) or in a critical area for the study
 
@@ -132,15 +134,119 @@ Susceptibility artefacts due to the non-uniformity of the field are mainly prese
 
 **Figure**: **a**. *Very slight susceptibility artefact near the ear cavities (the brain appears to be slightly nibbled), there is no need to exclude the image.* **b**. *Susceptibility artefact near the teeth caused by a metal object. This does not affect the brain, there is no need to exclude the image*
 
-#### E. Eye artifacts encroaching on the brain
+#### E. Eye artifacts spill over to the brain
+
+Look at the first mosaic in the report ("Zoomed-in mosaic view of the brain"). 
+
+If there are stong eyes movements, an overlap pf the eye signal in the brain may be observed. If the overlap is strong and/ or impacts regions of interest, it may be necessary to exclude the image.
+
+![T1w eye spillover](images/qc_eye_spillover.png "T1w eye spillover")
+
+**Figure**: *Eye artifacts spill over to the brain (green arrow) (from https://doi.org/10.1016/j.media.2021.102219)* 
+
+It is also possible that the eyes movements are visible only in the background of the image without impact on the brain, in this case it seems not necessary to exclude the image.
 
 #### F. Significant non-uniformity of intensity (bias inhomogeneity)
+
+Look at the first mosaic in the report ("Zoomed-in mosaic view of the brain"). 
+
+This non-uniformity is characterised by a variation in intensity in the brain, for example the white matter will be darker in the anterior regions than in the posterior regions of the brain. 
+
+There is always a slight bias inhomogeneity on the T1w image. This inhomogeneity can be corrected during post-processing. However, if it is too strong, the correction will not be sufficient and segmentation of white ang grey matter with software such as SPM may be problematic. The image may be excluded if the bias inhomogeneity is too strong. This may be due to an issue with the coil.
+
 #### G. Background noise or folding ghost artifact with an impact on the brain
+
+Look at the "Zoomed-in mosaic view of the brain" and "View of the background of the anatomical image" mosaics.
+
+The term "aliasing ghost" is used when the background noise is structured and appears as a shifted repetition of the brain. The image should be excluded if it spills over into the brain.
+
+![T1w background](images/qc_T1w_background.png "T1w background")
+
+**Figure**: *Aliasing ghost (a shifted repetition of the brain appears in the background). It does not seem to impact the brain, it is not necessary to exclude the image (from https://doi.org/10.1016/j.media.2021.102219)* 
+
 #### H. Very low gray/white matter contrast
+
+Look at the first mosaic in the report ("Zoomed-in mosaic view of the brain"). 
+
+If the contrast between the white and the grey matter is too low, segmentation with software such as SPM may be problematic. In extreme cases, it may be better to exclude the image from the analyses.  
+
 #### I. Inconsistent segmentations
+
+Look at «Brain extraction performance», «Head mask», «Brain tissue segmentation» mosaics.
+
+If the tissue segmentation is not consistent, this may indicate potential issues when segmenting with automatic software. It will be necessary to check carefully the outputs of the segmentation performed in the analyses before using them.
+
+Note that, in the MRIQC report, the head mask often appears to be inconsistent specifically near the teeth  and at the top of the brain.
+
+
+![T1w head mask](images/qc_head_mask.png "T1w head mask")
+
+**Figure**: *The head mask compute by MRIQC is inconsistent. However, it is not necessary to exclude the image* 
+
 #### J. Poor alignment in MNI
-#### K. Unexpected anatomical anomalies/pathologies not accounted for by the protocol
-#### L. Others
+
+Look at the «Spatial normalisation of the anatomical image» in order to check the MNI realignment.
+
+If the realignment in the MNI space is not consistent, this may indicate potential issues when using automatic software. As the normalisation in the MNI performed in MRIQC is a quick and "dirty" normalisation, it may not be necessary to exclude the image but it will be necessary to check carefully the outputs of the normalisation performed in the analyses before using them.
+
+#### K. Unexpected anatomical anomalies/pathologies not covered by the protocol
+
+Look at the first mosaic in the report ("Zoomed-in mosaic view of the brain").
+
+This may reveal anomalies not anticipated by the protocol (tumour, trace of a stroke).
+
+/!\ Nothe that it is not the role of a non-medical person to detect anomaly and that it is difficult to "name" the anomaly correctly without special medical training. The aim of this stage is simply to exclude images with anomalies that could cause problems in the subsequent analyses and/or to exclude subjects (for example if we want to make an atlas of healthy subjects). **This step is in no way a diagnosis and should not be communicated to the patient without medical advice. In case of doubt, contact the doctor in charge of the study.** 
+
+#### L. Other artifacts
+
+Other rarer artifacts may lead to the exclusion of an image. 
+
+### Functional EPI MRI
+
+In this section, we consider a functional MRI obtained with an EPI sequence.
+
+For fMRI acquisitions, we want to to obtain the highest possible signal-to-noise ratio (SNR) and contrast-to-noise ratio (CNR) while minimising the various artefacts. 
+
+Artefacts may be related to the pulse sequence used, the equipment (antenna/gradient) and the subject (head movements, cardiac and respiratory 'noises'.....). 
+
+Some artefacts are characteristic of EPI sequences:
+- Spatial distortions due to inhomogeneity of the static field (susceptibility artefact). They are more significant as the field strength increases. These distortions appear locally in the form of stretched or compressed pixels along the phase encoding axis. It is possible to correct some of these distortions retrospectively.  
+- Signal losses due to field inhomogeneities (susceptibility artefacts) near air/tissue interfaces.  Some acquisition parameters can help to reduce these signal losses (choice of an appropriate TE, increase number of slices.....). 
+- Phantom images in the phase encoding direction. These are due to the fact that the odd and even lines in k-space are acquired with opposite polarity. Certain acquisition techniques can help to reduce the extent of these effects. 
+
+We propose a list of criteria that may lead to the exclusion of an functional image. This list may need to be adjusted according to the study criteria and the planned analyses (specif ROI...). 
+
+Some criteria are based on the images available in the MRIQC report (mean signal, standard deviation map, alignment in MNI, carpet plot, etc.). Other criteria can be used by simply viewing the image in a viewer.
+
+**Proposed Quality Control criterion**:
+
+|    | Descriptions
+ -- | -- 
+A |Non-compliant brain coverage according to the protocol or abnormal subject positioning (subject rotation)
+B |Significant signal loss (susceptibility artifact) or in a critical area for the study
+C |Excessive spatial distortions of the brain (susceptibility artifact)
+D |High number of black slices, outliers, or hyperintensity in a slice
+E |Significant movements or in a critical area for the study
+F |Folding that impacts the brain
+G |Background noise or folding ghost artifact with an impact on the brain
+H |Unexpected anatomical anomalies/pathologies not covered by the protocol
+I |Other artifacts
+
+#### A. Non-compliant brain coverage according to the protocol or abnormal subject positioning (subject rotation)
+
+/!\ *In the case of certain studies, total non-coverage of the brain may be deliberate, so check the acquisition protocol.* 
+
+Look at the first mosaic in the report ("Voxel-wise average of BOLD time-series, zoomed-in covering just the brain") and especially the extreme slices (bottom and top of the brain) and the sagittal mosaic, which allows you to see quickly whether or not the area covered by the study is entirely covered. 
+
+A bad coverage can be problematic for the normalisation of the image in a common space such as the MNI (see "Spatial normalization of the anatomical image" mosaic). Note that, in MRIQC, the normalisation performed is "quick and dirty" (without using anatomical image). If the normalisation is bad in MRIQC, it will be necessary ti check carefully the outputs of the normalisation performed in the analyses but not necessary to exclud the image. 
+
+
+![fMRI coverage](images/qc_fmri_coverage.png "fMRI coverage")
+
+**Figure**: **A**: *The top of the brain is cut, maybe not necessary to exclud the image* **B**: *Impact on the normalisation in MRIQC(MNI space)* 
+
+
+
 
 
 

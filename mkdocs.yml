@@ -8,7 +8,7 @@ nav:
       - DICOM / NIfTI: users/conversionToNifti.md
       - BIDS: users/BIDS.md
       - Quality Control - MRIQC: users/mriqc.md
-      - Quality Control - step-by-step proposal: users/QC_guide.md
+      - Quality Control - A step-by-step proposal: users/QC_guide.md
       - Defacing: users/defacing.md
       - Dwi processing: users/dwi_processing.md
       - Tips Philips scanner: users/tips_philips.md 
