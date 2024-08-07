@@ -392,13 +392,14 @@ The standard deviation map should not show any particular "patterns". If this is
 #### Quality control of rawdata
 
 - [MRIQC](https://mriqc.readthedocs.io)
-- [VisualQC](https://raamana.github.io/visualqc/readme.html) 
+- [VisualQC](https://raamana.github.io/visualqc/readme.html)
+- [CONN toolbox](https://web.conn-toolbox.org/)
 
 #### Quality control of processed data
 
 - [AFNI’s afni_proc.py](https://afni.nimh.nih.gov/pub/dist/doc/program_help/afni_proc.py.html): QC html page with values and images that aid human interpretation of data quality 
-
 - [fMRIprep](https://fmriprep.org/en/stable/): preprocessing of task-based and resting-state fMRI with a report for QC
+- [CONN toolbox](https://web.conn-toolbox.org/)
 
 
 
