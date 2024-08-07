@@ -9,6 +9,10 @@ The idea is to suggest a visual QC approach, ideally using existing software tha
 
 There are various methods for conducting quality control on raw data and this section is juste one of them. The most crucial aspect is to closely examine the data to better understand it and accurately interpret the analyses.
 
+QC of raw data can be time-consuming and tedious for large databases. Several initiatives for automatic QC have been/are being developed, but for the moment there is no consensus and the tools are often specific to a cohort.
+
+Resources (bibliography, software) can be found at the end of the section. 
+
 ## General advices 
 
 - During the acquisition of an MRI sequence, various issues may arise and may affect image quality. These can include artifacts related to the MRI scanner, image reconstruction issues (e.g., folding), or choices made during acquisition (e.g., incorrect field of view). 
@@ -59,7 +63,6 @@ One solution is to report the information in an Excel spreadsheet, with a column
 ![Excel example](images/qc_excel_example.png "Excel example")
 
 In case of doubt or if the visual report is not precise enough, open the image in a specific viewer and review the different slices / dynamics.
-
 
 ### Structural T1w MRI
 
@@ -199,7 +202,7 @@ This may reveal anomalies not anticipated by the protocol (tumour, trace of a st
 
 #### L. Other artifacts
 
-Other rarer artifacts may lead to the exclusion of an image. 
+Other artefacts may be present and potentially lead to the exclusion of an image. If this is the case, add a note of the problem in the comments section.
 
 ### Functional EPI MRI
 
@@ -227,10 +230,12 @@ B |Significant signal loss (susceptibility artifact) or in a critical area for t
 C |Excessive spatial distortions of the brain (susceptibility artifact)
 D |High number of black slices, outliers, or hyperintensity in a slice
 E |Significant movements or in a critical area for the study
-F |Folding that impacts the brain
-G |Background noise or folding ghost artifact with an impact on the brain
+F |Aliasing artifact that impacts the brain
+G |Background noise or ghost artifact with an impact on the brain
 H |Unexpected anatomical anomalies/pathologies not covered by the protocol
 I |Other artifacts
+
+How to check each criteria is detailed below with examples. 
 
 #### A. Non-compliant brain coverage according to the protocol or abnormal subject positioning (subject rotation)
 
@@ -240,10 +245,170 @@ Look at the first mosaic in the report ("Voxel-wise average of BOLD time-series,
 
 A bad coverage can be problematic for the normalisation of the image in a common space such as the MNI (see "Spatial normalization of the anatomical image" mosaic). Note that, in MRIQC, the normalisation performed is "quick and dirty" (without using anatomical image). If the normalisation is bad in MRIQC, it will be necessary ti check carefully the outputs of the normalisation performed in the analyses but not necessary to exclud the image. 
 
-
 ![fMRI coverage](images/qc_fmri_coverage.png "fMRI coverage")
 
 **Figure**: **A**: *The top of the brain is cut, maybe not necessary to exclud the image* **B**: *Impact on the normalisation in MRIQC(MNI space)* 
+
+#### B. Significant signal loss (susceptibility artifact) or in a critical area for the study
+
+Look at the first mosaic in the report ("Voxel-wise average of BOLD time-series, zoomed-in covering just the brain"). 
+
+The signal losses impact the areas near air/tissue interfaces or close to metallic objects. The regions most affected are the prefrontal cortex and the region near the ear cavities.
+
+It could lead to image exclusion if the signal loss impact a big region or a region of ontrest for the study. 
+
+![fMRI signal loss](images/qc_fmri_signal_loss.png "fMRI signal loss")
+
+**Figure**: *Example of an image with an important signal loss on several slices* 
+
+#### C.  Excessive spatial distortions of the brain (susceptibility artifact)
+
+Look at the first mosaic in the report ("Voxel-wise average of BOLD time-series, zoomed-in covering just the brain").
+
+Spatial distortions of the brain due to susceptibility artifact appear locally in the form of stretched or compressed pixels along the phase encoding axis.
+
+![fMRI distortions](images/qc_fmri_distortions.png "fMRI distortions")
+
+**Figure**: *Data acquired with two inverse phase encoding direction (to the left antior-posterior and tp the right posterio-anterior)* 
+
+These distortions can be corrected using a field map. This may be an exclusion criterion if the distortion is too important and/or if no field map is available to correct these distortions. 
+
+![fMRI distortions 2](images/qc_fmri_distortions_2.png "fMRI distortions 2")
+
+**Figure**: *Example of distortion on an image acquired with a phase encoding direction in posterior tro anterior (PA). The anterior part of the brain seems to be "stretched". It is not necessarily necessary to exclude the image, especially if a correction sequence has been acquired.* 
+
+
+#### D. High number of black slices, outliers, or hyperintensity in a slice
+
+Look at the first mosaic in the report ("Voxel-wise average of BOLD time-series, zoomed-in covering just the brain") and the standard deviation map ("Standard deviation of signal through time"). The sagittal views often help to detect dark slices and hyper-intensities.
+
+WIP: ADD EXAMPLE WITH STD MAP
+
+It can be also useful to check the "carpet and nuisance signals". The "outiliers (%)" section is used to detect the percentage of voxels in a slice that are different from the mean signal.
+On the carpetplot, a dark slice or an hyper-intensity appears as a column very different from the other columns.
+
+WIP: ADD EXAMPLE WITH CARPET PLOT
+
+#### E. Significant movements or in a critical area for the study
+
+fMRI is often of very long (for resting state in can me more than 10 minutes) and it is therefore very likely that movements of the subjects will be observed during these acquisitions.
+
+Several types of movement are possible: eye movement, head movement during acquisition of a volume, head movement between 2 volumes, etc. These movements do not necessarily have the same impact on the images.
+
+In the MRIQC report, look at the "carpetplot and nuisance signals" section that shows the framewise displacement (FD), which represents the displacement of the subject's head between volumes. It is important to look at the scale of the graph (which changes between each subject) and to look at the mean and the maximum.
+If there are sudden movements, this will also have an effect on the carpet plot (a column different from the other columns). 
+
+![fMRI movements carpetplot](images/qc_fmri_movements.png "fMRI movements carpetplot")
+
+**Figure**: *Example of a carpetplot of a subject with movements*
+
+You can also look at the standard deviation map ("Standard deviation of signal through time").
+If a subject move a lot between the acquistion of the different volume, the standard deviation will be higher (yellow) around the brain. 
+
+![fMRI movements sdt](images/qc_fmri_movements_2.png "fMRI movements std")
+
+**Figure**: *Example of a standard deviation map from a subject with movements*
+
+This map can also be use to check whether eye movements have an impact on the brain (in this case, the variance varies a lot around the eyes and affects the brain).
+
+Note that during pre-processing, it is very common to perform a realignment to correct movement between volumes. It is therefore not necessarily necessary to exclude the image below a certain threshold. 
+
+#### F. Aliasing artifact that impacts the brain
+
+When the size of the object (head) exceeds the defined field of view, an aliasing artefact can be observed (part of the head that is visible on the opposite end of the image). 
+
+The aliasing artefact may be visible on the standard deviation map ("Standard deviation of signal through time" mosaic) or on the "average signal through time" mosaic or sometimes on the "view of the background of the voxel-wise average of the BOLD timeseries" mosaic.
+
+If the aliasing do not impact the brain, it seems not necessary to exclude the image.
+
+![fMRI aliasing](images/qc_fmri_aliasing.png "fMRI aliasing")
+
+**Figure**: *Example of aliasing visible on the standard deviation map (note that the image quality is already not great)*
+
+WIP: ADD OTHER EXAMPLE 
+
+#### G. Background noise or ghost artifact with an impact on the brain
+
+The background of the image should not contain any visible structures (as there is no BOLD signal in the background). A ghost artefact is a type of structured noise that appears as shifted and weakly repeated versions of the main object, usually in the direction of the phase encoding. These artefacts are often exacerbated by head movement.
+
+Look at the "view of the background of the voxel-wise average of the BOLD timeseries" mosaic. It may also be useful to look at the standard deviation map ("Standard deviation of signal through time" mosaic).
+If the background artefact is slight and does not spill over into the brain, there is no need to exclude the image. 
+
+WIP: ADD EXAMPLE 
+
+#### H. Unexpected anatomical anomalies/pathologies not covered by the protocol
+
+Look at the first mosaic in the report.
+
+This may reveal anomalies not anticipated by the protocol (tumour, trace of a stroke).
+
+/!\ Nothe that it is not the role of a non-medical person to detect anomaly and that it is difficult to "name" the anomaly correctly without special medical training. The aim of this stage is simply to exclude images with anomalies that could cause problems in the subsequent analyses and/or to exclude subjects (for example if we want to make an atlas of healthy subjects). **This step is in no way a diagnosis and should not be communicated to the patient without medical advice. In case of doubt, contact the doctor in charge of the study.**  
+
+#### I. Other artifacts
+
+Other artefacts may be present and potentially lead to the exclusion of an image. If this is the case, add a note of the problem in the comments section.
+
+Here some examples: 
+
+###### Hyperintense sagittal vertical band on the standard deviation map
+
+The cause of this artefact is not obvious. This does not necessarily mean that the image should be excluded, but it may be useful to ask the MRI physicists involved if they have an explanation (interaction with an element of the part during acquisition, etc.).
+
+![fMRI std map](images/qc_fmri_std_map.png "fMRI std map")
+
+**Figure**: *Example of a subject with hyperintense sagittal vertical band on the standard deviation map*
+
+###### Important signal drift over time. 
+
+In fMRI, the signal drifts slightly over time (or a difference between left and right). If this drift is too important (rare) without explanation, the image should be excluded. 
+
+![fMRI signal drift](images/qc_fmri_signal_drift.png "fMRI stdignal drift")
+
+**Figure**: *Example of a subject with a strong change in intensity over time (A. First volume B. Last volume); on this subject there is also a difference between left and right.*
+
+##### Patterns on the standard deviation map
+
+The standard deviation map should not show any particular "patterns". If this is the case, you should talk to the people in charge of acquisitions to understand the cause (sudden movements of the subject, parallel imaging technique, etc.) and possibly exclude the image.
+
+
+![fMRI std map 2](images/qc_fmri_std_map_2.png "fMRI std map 2")
+
+**Figure**: **A**: *Example of a subject with a pattern on the standard deviation map (here the repetition of the brain, probabely because of parallele imaging technic used during the acquisition* **B**: *Example of a subject without artifact on the standard deviation map*
+
+
+## Ressources
+
+### Bibliography (non-exhaustive)
+
+- A [working group on fMRI data quality control](https://www.frontiersin.org/research-topics/33922/demonstrating-quality-control-qc-procedures-in-fmri/magazine). Several research teams proposed articles to show their QC methods and for example: 
+
+    - [Provins, Céline and all. “Quality Control in Functional MRI Studies with MRIQC and fMRIPrep.” Frontiers in Neuroimaging 1 (2023).](https://www.frontiersin.org/articles/10.3389/fnimg.2022.1073734)
+
+        **Note that this guide was strongly inspired by this article.**
+    - [Teves, Joshua B. and all “The Art and Science of Using Quality Control to Understand and Improve fMRI Data.” Frontiers in Neuroscience 17 (2023).]( https://www.frontiersin.org/articles/10.3389/fnins.2023.1100544.)
+
+### Sofware (non-exhaustive)
+
+#### Quality control of rawdata
+
+- [MRIQC](https://mriqc.readthedocs.io)
+- [VisualQC](https://raamana.github.io/visualqc/readme.html) 
+
+#### Quality control of processed data
+
+- [AFNI’s afni_proc.py](https://afni.nimh.nih.gov/pub/dist/doc/program_help/afni_proc.py.html): QC html page with values and images that aid human interpretation of data quality 
+
+- [fMRIprep](https://fmriprep.org/en/stable/): preprocessing of task-based and resting-state fMRI with a report for QC
+
+
+
+
+
+
+
+
+
+
 
 
 
