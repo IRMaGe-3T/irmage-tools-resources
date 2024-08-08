@@ -1,13 +1,13 @@
 # Quality Control guide
 
-WORK IN PROGRESS
+*WORK IN PROGRESS*
 
 ## Introduction
 
 The purpose of this section is to provide advice on how to perform quality control (QC) on raw MRI data for clinical research studies,specifically focusing on anatomical and functional MRI data.
 The idea is to suggest a visual QC approach, ideally using existing software that generates quality reports and metrics (e.g., MRIQC software).
 
-There are various methods for conducting quality control on raw data and this section is juste one of them. The most crucial aspect is to closely examine the data to better understand it and accurately interpret the analyses.
+There are various methods for conducting quality control on raw data and this section is juste one proposition. The most crucial aspect is to closely examine the data to better understand them and accurately interpret the analyses.
 
 QC of raw data can be time-consuming and tedious for large databases. Several initiatives for automatic QC have been/are being developed, but for the moment there is no consensus and the tools are often specific to a cohort.
 
@@ -15,8 +15,7 @@ Resources (bibliography, software) can be found at the end of the section.
 
 ## General advices 
 
-- During the acquisition of an MRI sequence, various issues may arise and may affect image quality. These can include artifacts related to the MRI scanner, image reconstruction issues (e.g., folding), or choices made during acquisition (e.g., incorrect field of view). 
-Additionally, there may be physiological artifacts related to the patient (e.g., movements). Performing quality control on the data helps identify data that should be excluded because they could interfere with the analyses. The goal is to determine whether the image can be used to answer the study's questions.
+- During the acquisition of an MRI sequence, various issues may arise and may affect image quality. These can include artifacts related to the MRI scanner, image reconstruction issues, or choices made during acquisition (e.g., incorrect field of view). Additionally, there may be physiological artifacts related to the patient (e.g., movements). Performing quality control on the data helps identify data that should be excluded because they could interfere with the analyses. The goal is to determine whether the image can be used to answer the study's questions.
 
 - Ideally, an initial data check should be performed during acquisition to potentially redo any problematic sequences (if possible). For example, if a subject moved significantly during one of the main protocol sequences, it might be more useful to redo that sequence rather than completing the optional sequences (if there are any).
 
@@ -32,7 +31,9 @@ Additionally, there may be physiological artifacts related to the patient (e.g.,
 
 ## Verification of the data "integrity" and of the parameters
 
-The first step is to verify the "integrity" of the data, meaning ensuring that the data is ready for analysis. Here is a non-exhaustive list of things that are useful to check:
+The first step is to verify the "integrity" of the data, meaning ensuring that the data is ready for analysis. 
+
+Here is a non-exhaustive list of things that are useful to check:
 
 - Verification of the database consistency in terms of subject identifiers and session dates.
 
@@ -40,21 +41,21 @@ The first step is to verify the "integrity" of the data, meaning ensuring that t
 
 - Checking that the DICOM files are complete. In "classic" mode, a DICOM file is generated for each acquired image (slice, dynamic, echo, etc.) and so there are several DICOM files for one sequence. In "Enhanced" mode, a single file is generated for each sequence (with a certain size limit). In classic mode, it is possible that an export or transfer error results in missing some DICOM files, and thus some images. It may be useful to check the size of the images converted to NIfTI to highlight such problems. This check can also be done during the visual inspection of the images.
 
-- Verification of the main acquisition parameters. Some parameter modification may have been made during the coyrse of the study and may influence the analyses (eg, modification of repetion time following an upgrade of the MRI software). Here is a non-exhaustive list of the parameters that may be useful to check: echo time, repetition time, voxel size, number of repetitions for functional MRI, parallel imaging... Depending on the sequence, certain parameters are more important to check than others.
+- Verification of the main acquisition parameters. Some parameter modification may have been made during the course of the study and may influence the analyses (e.g., modification of repetion time following an upgrade of the MRI software). Here is a non-exhaustive list of the parameters that may be useful to check: echo time, repetition time, voxel size, number of repetitions for functional MRI, parallel imaging... Depending on the sequence, certain parameters are more important to check than others.
 
 
 ## QC of anatomical and functional data with MRIQC
 
 In this section, we propose to use MRIQC to perform QC of anatomical and functional data. 
-The idea is to use the visul report to perform a data QC. However, it is useful to open the image in a specific viewer in case of doubt about image quality, or to see the different dynamics of a functional sequence.
+The idea is to use the visul report to perform QC of raw data. However, it may be useful to open the image in a specific viewer in case of doubt about image quality, or to check the different dynamics of a functional sequence.
 
 To use MRIQC check out the documentation [here](mriqc.md) or directly the [MRIQC documentation](https://mriqc.readthedocs.io/).
 
-Once the MRIQC's results are available,for each subject, open the MRIQC report (explanation can be found [here](https://mriqc.readthedocs.io/en/latest/reports.html#demo-anatomical-reports)).
+Once the MRIQC's results are available, for each subject, open the MRIQC report (explanation can be found [here](https://mriqc.readthedocs.io/en/latest/reports.html#demo-anatomical-reports)).
 
 The report contains several mosaics (mean signal, zoomed-in on the brain, image with background noise enhancement...). For functional data, there's also a summary graph, including a plot for framewise displacement (FD) and a carpetplot. The FD represents the displacement of the subject's head. Each line of the carpetplot represents the value of a voxel over time (separated by region). 
 
-Check each mosaic and graph and check whether any of the criteria proposed and detailed below are present and whether this should lead to the exclusion of the data for analysis.
+Check each mosaic and graph. Check whether any of the criteria proposed and detailed below are present and whether this should lead to the exclusion of the data for analysis.
 
 Very often, certain artifacts are present on the image but do not imply that the image should be excluded. In such cases, it may be useful to report the presence of the artifact anyway.
 
@@ -68,11 +69,11 @@ In case of doubt or if the visual report is not precise enough, open the image i
 
 In this section, we consider a non-contrast T1 anatomical sequence.
 
-We propose a list of criteria that may lead to the exclusion of an anatomical image. This list may need to be adjusted according to the study criteria and the planned analyses. If a specific area is critical for the study (e.g., the hippocampus if the study aims to segment the hippocampus), it may be useful to add a QC criterion for this area ("is there an artifact in this area?").
+We propose a list of criteria that may lead to the exclusion of an anatomical image. This list may need to be adjusted according to the study criteria and the planned analyses. If a specific area is critical for the study (e.g., the hippocampus if the study aims to segment the hippocampus), it may be useful to add a QC criteria for this area ("is there an artifact in this area?").
 
-Some criteria are based on the images available in the MRIQC report (alignment in MNI, segmentation, etc.). Other criteria can be used by simply viewing the image in a viewer.
+Some criteria are based on the mosaics available in the MRIQC report (alignment in MNI, segmentation, etc.). Other criteria can be used by simply viewing the image in a viewer.
 
-**Proposed Quality Control criterion**:
+**Proposed Quality Control criteria**:
 
 |    | Descriptions
  -- | -- 
@@ -384,22 +385,34 @@ The standard deviation map should not show any particular "patterns". If this is
 
     - [Provins, Céline and all. “Quality Control in Functional MRI Studies with MRIQC and fMRIPrep.” Frontiers in Neuroimaging 1 (2023).](https://www.frontiersin.org/articles/10.3389/fnimg.2022.1073734)
 
-        **Note that this guide was strongly inspired by this article.**
+        **Note that this guide was inspired by this article.**
     - [Teves, Joshua B. and all “The Art and Science of Using Quality Control to Understand and Improve fMRI Data.” Frontiers in Neuroscience 17 (2023).]( https://www.frontiersin.org/articles/10.3389/fnins.2023.1100544.)
+
+- Automatic quality control:
+
+    - [Hendrilks Janine and all. "A systematic review of (semi-)automatic quality control of T1-weighted MRI scans"](https://link.springer.com/article/10.1007/s00234-023-03256-0)
+
+    - [Bottani Simona and all. "Automatic quality control of brain T1-weighted magnetic resonance images for a clinical data warehouse"](https://www.sciencedirect.com/science/article/abs/pii/S1361841521002644)
+
+    - [Alfaro-Almagro Fidel and all. "Image processing and Quality Control for the first 10,000 brain imaging datasets from UK Biobank"](https://www.sciencedirect.com/science/article/pii/S1053811917308613)
+
+    - [Bastaiani Matteo and all. "Automated quality control for within and between studies diffusion MRI data using a non-parametric framework for movement and distortion correction"](https://www.sciencedirect.com/science/article/pii/S1053811918319451)
 
 ### Sofware (non-exhaustive)
 
 #### Quality control of rawdata
 
-- [MRIQC](https://mriqc.readthedocs.io)
+- [MRIQC](https://mriqc.readthedocs.io): for functional and anatomical data
 - [VisualQC](https://raamana.github.io/visualqc/readme.html)
-- [CONN toolbox](https://web.conn-toolbox.org/)
+- [CONN toolbox](https://web.conn-toolbox.org/): possibilty to do QC for functional MRI
 
 #### Quality control of processed data
 
 - [AFNI’s afni_proc.py](https://afni.nimh.nih.gov/pub/dist/doc/program_help/afni_proc.py.html): QC html page with values and images that aid human interpretation of data quality 
 - [fMRIprep](https://fmriprep.org/en/stable/): preprocessing of task-based and resting-state fMRI with a report for QC
-- [CONN toolbox](https://web.conn-toolbox.org/)
+- [CONN toolbox](https://web.conn-toolbox.org/): a Matlab-based cross-platform software for the computation, display, and analysis of
+functional connectivity in fMRI (fcMRI) with possibility to do QC for each step. 
+- [Qoala-T](https://github.com/Qoala-T/QC): A supervised-learning tool for quality control of FreeSurfer segmented MRI data
 
 
 
