@@ -4,10 +4,10 @@
 
 ## Introduction
 
-The purpose of this section is to provide advice on how to perform quality control (QC) on raw MRI data for clinical research studies,specifically focusing on anatomical and functional MRI data.
+The purpose of this section is to provide advice on how to perform quality control (QC) on raw MRI data for clinical research studies, specifically focusing on anatomical and functional MRI data.
 The idea is to suggest a visual QC approach, ideally using existing software that generates quality reports and metrics (e.g., MRIQC software).
 
-There are various methods for conducting quality control on raw data and this section is juste one proposition. The most crucial aspect is to closely examine the data to better understand them and accurately interpret the analyses.
+There are various methods for conducting QC on raw data and this section is juste one proposition. The most crucial aspect is to closely examine the data to better understand them and accurately interpret the analyses.
 
 QC of raw data can be time-consuming and tedious for large databases. Several initiatives for automatic QC have been/are being developed, but for the moment there is no consensus and the tools are often specific to a cohort.
 
@@ -19,11 +19,11 @@ Resources (bibliography, software) can be found at the end of the section.
 
 - Ideally, an initial data check should be performed during acquisition to potentially redo any problematic sequences (if possible). For example, if a subject moved significantly during one of the main protocol sequences, it might be more useful to redo that sequence rather than completing the optional sequences (if there are any).
 
-- A "good data" from a quality control perspective does not necessarily mean that the chosen sequence is suitable for the intended application. The selected parameters may be inadequate for the planned analyses (e.g., significant signal loss in the area of interest due to the chosen parameters). Therefore, it is important to discuss with an MRI physicist before starting acquisitions to properly set up the sequences and conduct pilot subjects. If a particular area is crucial for data analysis (e.g., if fMRI activation is expected in this area or, for anatomicatl data, if this area should be segmentated), it is useful to add an exclusion criterion for data based on the quality of that specific area.
+- A "good data" from a quality control perspective does not necessarily mean that the chosen sequence is suitable for the intended application. The selected parameters may be inadequate for the planned analyses (e.g., significant signal loss in the area of interest due to the chosen parameters). Therefore, it is important to discuss with an MRI physicist before starting acquisitions to properly set up the sequences and conduct pilot subjects. If a particular area is crucial for data analysis (e.g., if fMRI activation is expected in this area or, for anatomicatl data, if this area should be segmented), it is useful to add an exclusion criterion based on the quality of that specific area.
 
 - Currently, there is no consensus on how to perform QC; there is no single "correct way" to conduct QC (different tools, methodologies, and sometimes different definitions for quantitative values). Some rejection criteria for an image may depend on the study and the analyses to be performed. To maintain consistency in quality control, it is important to follow the same QC steps within the same study.
 
-- It is sometimes useful to use pre-processing to perform QC on raw data because it helps to better understand the data. For example, for an anatomical sequence, it might be useful to check if the segmentation of white/gray matter is done correctly. For a diffusion sequence, it might be useful to look at reconstructions maps like FA.
+- It is sometimes useful to use pre-processing to perform QC on raw data because it helps to better understand the data. For example, for an anatomical sequence, it might be useful to check if the segmentation of white/gray matter is done correctly. For a diffusion sequence, it might be useful to look at reconstructions maps like fractional anisotropy (FA).
 
 - This section focuses on image quality, but for functional MRI data, it is also useful to have a method for verifying if the subject performed the task correctly/if the measurements were properly recorded.
 
@@ -41,13 +41,13 @@ Here is a non-exhaustive list of things that are useful to check:
 
 - Checking that the DICOM files are complete. In "classic" mode, a DICOM file is generated for each acquired image (slice, dynamic, echo, etc.) and so there are several DICOM files for one sequence. In "Enhanced" mode, a single file is generated for each sequence (with a certain size limit). In classic mode, it is possible that an export or transfer error results in missing some DICOM files, and thus some images. It may be useful to check the size of the images converted to NIfTI to highlight such problems. This check can also be done during the visual inspection of the images.
 
-- Verification of the main acquisition parameters. Some parameter modification may have been made during the course of the study and may influence the analyses (e.g., modification of repetion time following an upgrade of the MRI software). Here is a non-exhaustive list of the parameters that may be useful to check: echo time, repetition time, voxel size, number of repetitions for functional MRI, parallel imaging... Depending on the sequence, certain parameters are more important to check than others.
+- Verification of the main acquisition parameters. Some parameter modifications may have been made during the course of the study and may influence the analyses (e.g., modification of repetion time following an upgrade of the MRI software). Here is a non-exhaustive list of the parameters that may be useful to check: echo time, repetition time, voxel size, number of repetitions for functional MRI, parallel imaging... Depending on the sequence, certain parameters are more important to check than others.
 
 
 ## QC of anatomical and functional data with MRIQC
 
-In this section, we propose to use MRIQC to perform QC of anatomical and functional data. 
-The idea is to use the visul report to perform QC of raw data. However, it may be useful to open the image in a specific viewer in case of doubt about image quality, or to check the different dynamics of a functional sequence.
+In this section, we propose to use MRIQC software to perform QC of anatomical and functional data. 
+The idea is to use the visual report provided by MRIQC. However, it may be useful to open the image in a specific viewer in case of doubt about image quality, or to check the different dynamics of a functional sequence.
 
 To use MRIQC check out the documentation [here](mriqc.md) or directly the [MRIQC documentation](https://mriqc.readthedocs.io/).
 
@@ -69,7 +69,7 @@ In case of doubt or if the visual report is not precise enough, open the image i
 
 In this section, we consider a non-contrast T1 anatomical sequence.
 
-We propose a list of criteria that may lead to the exclusion of an anatomical image. This list may need to be adjusted according to the study criteria and the planned analyses. If a specific area is critical for the study (e.g., the hippocampus if the study aims to segment the hippocampus), it may be useful to add a QC criteria for this area ("is there an artifact in this area?").
+We propose a list of criteria that may lead to the exclusion of an anatomical image. This list may need to be adjusted according to the study criteria and the planned analyses. If a specific area is critical for the study (e.g., the hippocampus, if the study aims to segment the hippocampus), it may be useful to add a QC criteria for this area ("is there an artifact in this area?").
 
 Some criteria are based on the mosaics available in the MRIQC report (alignment in MNI, segmentation, etc.). Other criteria can be used by simply viewing the image in a viewer.
 
@@ -108,19 +108,19 @@ Look at the first mosaic ("Zoomed-in mosaic view of the brain") in the report.
 
 Look at the first mosaic in the report ("Zoomed-in mosaic view of the brain"), in particular the extreme sections (bottom and top of the brain) and the sagittal mosaic, which allows you to quickly see whether or not the brain is fully covered. 
 
-#### C.Significant movement artifacts (“wrinkles” or “blur” or cortex duplication) or in a critical area for the study
+#### C. Significant movement artifacts (“wrinkles” or “blur” or cortex duplication) or in a critical area for the study
 
 Look at the first mosaic ("Zoomed-in mosaic view of the brain") in the report. 
 
-Head movements during acquisition result in the appearance of lines that are rather concentric ("wrinkles" / "ripples") or a "blur" or duplication in the cortex in certain parts or throughout the image.
-Depending on the planned analysis on the anatomical sequence, it may be acceptable to retain sequences with slight movements.
+Head movements during acquisition result in the appearance of lines that are rather concentric ("wrinkles" / "ripples") or a "blur" or duplication in the cortex. Movement can be visible either throughout the image or in just a part of it.
+Depending on the planned analysis on the anatomical sequence, it may be acceptable to keep sequences with slight movements.
 
 It is important to know the areas of interest in the study (or the subjects' pathology). For example, if the aim of the study is to segment the hippocampus, movement artifacts in the hippocampus will require the image to be excluded, whereas movement artifacts in the cerebellum will not.
 
 ![T1w with movements](images/qc_movements.png "T1w with movement")
 **Figure**: **A and B**: *Wrinkles, the image is not necessarily to be excluded, it depends on the analyses planned* **C**: *Movement is very important (wrinkles + blur), to be excluded if segmentation analyses are to be carried out.*
 
-We can also sometimes observe a so-called "Gibbs" artifact (truncation artifact), which is sometimes difficult to distinguish from motion (which is why it is discussed here in the same exclusion criterion). 
+We can also sometimes observe a so-called "Gibbs" artifact (truncation artifact), which is sometimes difficult to distinguish from motion (which is why it is discussed here in the same exclusion criteria). 
 This artifact generates fine lines at high-contrast interfaces. 
 
 ![T1w with Gibbs artifact](images/qc_gibbs.png "T1w with Gibbs atifact")
@@ -142,7 +142,7 @@ Susceptibility artefacts due to the non-uniformity of the field are mainly prese
 
 Look at the first mosaic in the report ("Zoomed-in mosaic view of the brain"). 
 
-If there are stong eyes movements, an overlap pf the eye signal in the brain may be observed. If the overlap is strong and/ or impacts regions of interest, it may be necessary to exclude the image.
+If there are stong eyes movements, an overlap of the eye signal in the brain may be observed. If the overlap is strong and/ or impacts regions of interest, it may be necessary to exclude the image.
 
 ![T1w eye spillover](images/qc_eye_spillover.png "T1w eye spillover")
 
@@ -156,7 +156,7 @@ Look at the first mosaic in the report ("Zoomed-in mosaic view of the brain").
 
 This non-uniformity is characterised by a variation in intensity in the brain, for example the white matter will be darker in the anterior regions than in the posterior regions of the brain. 
 
-There is always a slight bias inhomogeneity on the T1w image. This inhomogeneity can be corrected during post-processing. However, if it is too strong, the correction will not be sufficient and segmentation of white ang grey matter with software such as SPM may be problematic. The image may be excluded if the bias inhomogeneity is too strong. This may be due to an issue with the coil.
+There is always a slight bias inhomogeneity on the T1w image. This inhomogeneity can be corrected during post-processing. However, if it is too strong, the correction will not be sufficient and segmentation of white and gray matter with software such as SPM may be problematic. The image may be excluded if the bias inhomogeneity is too strong. This may be due to an issue with the coil.
 
 #### G. Background noise or folding ghost artifact with an impact on the brain
 
@@ -182,7 +182,6 @@ If the tissue segmentation is not consistent, this may indicate potential issues
 
 Note that, in the MRIQC report, the head mask often appears to be inconsistent specifically near the teeth  and at the top of the brain.
 
-
 ![T1w head mask](images/qc_head_mask.png "T1w head mask")
 
 **Figure**: *The head mask compute by MRIQC is inconsistent. However, it is not necessary to exclude the image* 
@@ -197,9 +196,9 @@ If the realignment in the MNI space is not consistent, this may indicate potenti
 
 Look at the first mosaic in the report ("Zoomed-in mosaic view of the brain").
 
-This may reveal anomalies not anticipated by the protocol (tumour, trace of a stroke).
+This may reveal anomalies not anticipated by the protocol (tumor, trace of a stroke).
 
-/!\ Nothe that it is not the role of a non-medical person to detect anomaly and that it is difficult to "name" the anomaly correctly without special medical training. The aim of this stage is simply to exclude images with anomalies that could cause problems in the subsequent analyses and/or to exclude subjects (for example if we want to make an atlas of healthy subjects). **This step is in no way a diagnosis and should not be communicated to the patient without medical advice. In case of doubt, contact the doctor in charge of the study.** 
+/!\ Nothe that it is not the role of a non-medical person to detect anomaly and that it is difficult to "name" the anomaly correctly without special medical training. The aim of this stage is simply to exclude images with anomalies that could cause problems in the subsequent analyses and/or to exclude subjects (for example if we want to make an atlas of healthy subjects). **This step is in no way a diagnosis and should not be communicated to the subject without medical advice. In case of doubt, contact the doctor in charge of the study.** 
 
 #### L. Other artifacts
 
@@ -209,13 +208,13 @@ Other artefacts may be present and potentially lead to the exclusion of an image
 
 In this section, we consider a functional MRI obtained with an EPI sequence.
 
-For fMRI acquisitions, we want to to obtain the highest possible signal-to-noise ratio (SNR) and contrast-to-noise ratio (CNR) while minimising the various artefacts. 
+For fMRI acquisitions, we want to to obtain the highest signal-to-noise ratio (SNR) and contrast-to-noise ratio (CNR) while minimising the various artefacts. 
 
-Artefacts may be related to the pulse sequence used, the equipment (antenna/gradient) and the subject (head movements, cardiac and respiratory 'noises'.....). 
+Artefacts may be related to the pulse sequence used, the equipment (antenna/gradient) and the subject (head movements, cardiac and respiratory 'noises'...). 
 
 Some artefacts are characteristic of EPI sequences:
 - Spatial distortions due to inhomogeneity of the static field (susceptibility artefact). They are more significant as the field strength increases. These distortions appear locally in the form of stretched or compressed pixels along the phase encoding axis. It is possible to correct some of these distortions retrospectively.  
-- Signal losses due to field inhomogeneities (susceptibility artefacts) near air/tissue interfaces.  Some acquisition parameters can help to reduce these signal losses (choice of an appropriate TE, increase number of slices.....). 
+- Signal losses due to field inhomogeneities (susceptibility artefacts) near air/tissue interfaces. Some acquisition parameters can help to reduce these signal losses (choice of an appropriate TE, increase number of slices.....). 
 - Phantom images in the phase encoding direction. These are due to the fact that the odd and even lines in k-space are acquired with opposite polarity. Certain acquisition techniques can help to reduce the extent of these effects. 
 
 We propose a list of criteria that may lead to the exclusion of an functional image. This list may need to be adjusted according to the study criteria and the planned analyses (specif ROI...). 
@@ -244,7 +243,7 @@ How to check each criteria is detailed below with examples.
 
 Look at the first mosaic in the report ("Voxel-wise average of BOLD time-series, zoomed-in covering just the brain") and especially the extreme slices (bottom and top of the brain) and the sagittal mosaic, which allows you to see quickly whether or not the area covered by the study is entirely covered. 
 
-A bad coverage can be problematic for the normalisation of the image in a common space such as the MNI (see "Spatial normalization of the anatomical image" mosaic). Note that, in MRIQC, the normalisation performed is "quick and dirty" (without using anatomical image). If the normalisation is bad in MRIQC, it will be necessary ti check carefully the outputs of the normalisation performed in the analyses but not necessary to exclud the image. 
+A bad coverage can be problematic for the normalisation of the image in a common space such as the MNI (see "Spatial normalization of the anatomical image" mosaic). Note that, in MRIQC, the normalisation performed is "quick and dirty" (without using anatomical image). If the normalisation is bad in MRIQC, it will be necessary to check carefully the outputs of the normalisation performed in the analyses but not necessary to exclud the image. 
 
 ![fMRI coverage](images/qc_fmri_coverage.png "fMRI coverage")
 
@@ -256,7 +255,7 @@ Look at the first mosaic in the report ("Voxel-wise average of BOLD time-series,
 
 The signal losses impact the areas near air/tissue interfaces or close to metallic objects. The regions most affected are the prefrontal cortex and the region near the ear cavities.
 
-It could lead to image exclusion if the signal loss impact a big region or a region of ontrest for the study. 
+It could lead to image exclusion if the signal loss impact a big region or a region of interest for the study. 
 
 ![fMRI signal loss](images/qc_fmri_signal_loss.png "fMRI signal loss")
 
@@ -270,13 +269,13 @@ Spatial distortions of the brain due to susceptibility artifact appear locally i
 
 ![fMRI distortions](images/qc_fmri_distortions.png "fMRI distortions")
 
-**Figure**: *Data acquired with two inverse phase encoding direction (to the left antior-posterior and tp the right posterio-anterior)* 
+**Figure**: *Data acquired with two inverse phase encoding direction (to the left antior-posterior and to the right posterio-anterior)* 
 
-These distortions can be corrected using a field map. This may be an exclusion criterion if the distortion is too important and/or if no field map is available to correct these distortions. 
+These distortions can be corrected using a field map. This may be an exclusion criteria if the distortions are too important and/or if no field map is available to correct these distortions. 
 
 ![fMRI distortions 2](images/qc_fmri_distortions_2.png "fMRI distortions 2")
 
-**Figure**: *Example of distortion on an image acquired with a phase encoding direction in posterior tro anterior (PA). The anterior part of the brain seems to be "stretched". It is not necessarily necessary to exclude the image, especially if a correction sequence has been acquired.* 
+**Figure**: *Example of distortion on an image acquired with a phase encoding direction in posterior to anterior (PA). The anterior part of the brain seems to be "stretched". It is not necessarily necessary to exclude the image, especially if a correction sequence has been acquired.* 
 
 
 #### D. High number of black slices, outliers, or hyperintensity in a slice
@@ -312,7 +311,7 @@ If a subject move a lot between the acquistion of the different volume, the stan
 
 This map can also be use to check whether eye movements have an impact on the brain (in this case, the variance varies a lot around the eyes and affects the brain).
 
-Note that during pre-processing, it is very common to perform a realignment to correct movement between volumes. It is therefore not necessarily necessary to exclude the image below a certain threshold. 
+Note that during pre-processing, it is very common to perform a realignment to correct movement between volumes. It is therefore not necessary to exclude the image below a certain threshold. 
 
 #### F. Aliasing artifact that impacts the brain
 
@@ -353,7 +352,7 @@ Here some examples:
 
 ###### Hyperintense sagittal vertical band on the standard deviation map
 
-The cause of this artefact is not obvious. This does not necessarily mean that the image should be excluded, but it may be useful to ask the MRI physicists involved if they have an explanation (interaction with an element of the part during acquisition, etc.).
+The cause of this artefact is not obvious. This does not necessarily mean that the image should be excluded, but it may be useful to ask the MRI physicists involved if they have an explanation (interaction with an element of the 2MRI room during acquisition, etc.).
 
 ![fMRI std map](images/qc_fmri_std_map.png "fMRI std map")
 
@@ -374,7 +373,7 @@ The standard deviation map should not show any particular "patterns". If this is
 
 ![fMRI std map 2](images/qc_fmri_std_map_2.png "fMRI std map 2")
 
-**Figure**: **A**: *Example of a subject with a pattern on the standard deviation map (here the repetition of the brain, probabely because of parallele imaging technic used during the acquisition* **B**: *Example of a subject without artifact on the standard deviation map*
+**Figure**: **A**: *Example of a subject with a pattern on the standard deviation map (here the repetition of the brain, probabely because of parallele imaging technic used during the acquisition)* **B**: *Example of a subject without artifact on the standard deviation map*
 
 
 ## Ressources
