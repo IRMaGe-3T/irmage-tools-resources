@@ -2,7 +2,7 @@
 
 For research project on human, it is important to de-identify MRI data and metadata (no identifying data as name, date of birth, adresses...). 
 
-If your want to share your data outside your lab or outside a consortium, this deidentification can be insuffisante because anatomical data may allow to identify a subject (by reconstructing the skin surface). Indentification of a person from a anatmical MRI was shown to be a feasible task (for e.g,[Abramian, D (2019)](https://ieeexplore.ieee.org/document/8759515)).
+If your want to share your data outside your lab or outside a consortium, this deidentification can be insuffisante because anatomical data may allow to identify a subject (by reconstructing the skin surface). Indentification of a person from a anatmical MRI was shown to be a feasible task (for e.g, [Abramian, D (2019)](https://ieeexplore.ieee.org/document/8759515)).
 
 Three main approaches for face de-identification have been proposed: 
 
@@ -24,12 +24,23 @@ The question of the impact of the face de-identification on the outcomes of imag
 
 It seems that defacing can alter volumetric and quality measures. The studies shows different conclusions about significance of this impact. In comparison to defacing, it seems that the refacing mitigates the impact on image post-processing results, 
 
-
 There are severals de-identification software: [mri_deface](https://surfer.nmr.mgh.harvard.edu/fswiki/mri_deface), [pydeface](https://github.com/poldracklab/pydeface), [quickshear](https://github.com/nipy/quickshear), [mridefacer](https://github.com/mih/mridefacer), [afni_refacer](https://afni.nimh.nih.gov/pub/dist/doc/program_help/@afni_refacer_run.html), [deepdefacer](https://pypi.org/project/deepdefacer/).
 
 Some face de-identification software can struggle with some images and can remove brain voxels. So it is important to do a quality check of the defecing results. 
 Note that, not all software give the same result according to the poulation (young, elderly person...).
 If the defacing of a image or of a cohort worked poorly with one software, it can be usefull to test others.
+
+## AFNI @afni_refacer_run
+
+AFNI (Analysis of Functional NeuroImages) is a suite of programs for analyzing MRI brain images. The [@afni_refacer_run](https://afni.nimh.nih.gov/pub/dist/doc/htmldoc/tutorials/refacer/refacer_run.html#introduction) programme can be used to deface or reface (two modes available) a T1w image. 
+
+Once AFNI is installed, @afni_refacer_run can be run using several modes (mode_all, mode_reface...):
+
+```
+@afni_refacer_run -input /bids/sub-02/anat/sub-002_T1w.nii.gz -mode_all -prefix sub-002_T1w
+```
+
+Reface and deface images are obtainded and QC images are created to check the results.
 
 ## BIDSonym
 
