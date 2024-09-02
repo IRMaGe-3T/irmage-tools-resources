@@ -213,8 +213,11 @@ For fMRI acquisitions, we want to to obtain the highest signal-to-noise ratio (S
 Artefacts may be related to the pulse sequence used, the equipment (antenna/gradient) and the subject (head movements, cardiac and respiratory 'noises'...). 
 
 Some artefacts are characteristic of EPI sequences:
+
 - Spatial distortions due to inhomogeneity of the static field (susceptibility artefact). They are more significant as the field strength increases. These distortions appear locally in the form of stretched or compressed pixels along the phase encoding axis. It is possible to correct some of these distortions retrospectively.  
-- Signal losses due to field inhomogeneities (susceptibility artefacts) near air/tissue interfaces. Some acquisition parameters can help to reduce these signal losses (choice of an appropriate TE, increase number of slices.....). 
+
+- Signal losses due to field inhomogeneities (susceptibility artefacts) near air/tissue interfaces. Some acquisition parameters can help to reduce these signal losses (choice of an appropriate TE, increase number of slices...). 
+
 - Phantom images in the phase encoding direction. These are due to the fact that the odd and even lines in k-space are acquired with opposite polarity. Certain acquisition techniques can help to reduce the extent of these effects. 
 
 We propose a list of criteria that may lead to the exclusion of an functional image. This list may need to be adjusted according to the study criteria and the planned analyses (specif ROI...). 
@@ -375,6 +378,13 @@ The standard deviation map should not show any particular "patterns". If this is
 
 **Figure**: **A**: *Example of a subject with a pattern on the standard deviation map (here the repetition of the brain, probabely because of parallele imaging technic used during the acquisition)* **B**: *Example of a subject without artifact on the standard deviation map*
 
+##### "Bright" outliers
+
+The cause of this artefact is not obvious. This does not necessarily mean that the image should be excluded, but it may be useful to ask the MRI physicists involved if they have an explanation (interaction with an element of the 2MRI room during acquisition, etc.).
+
+![fMRI bright outliers](images/qc_fmri_bright_outliers.png "fMRI bright outliers")
+
+**Figure**: *Example of a subject with "bright" outliers* **A**: *Carpetplot from MRIQC report* **B**: *Sagittal and coronal plan*
 
 ## Ressources
 
