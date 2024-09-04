@@ -264,6 +264,13 @@ It could lead to image exclusion if the signal loss impact a big region or a reg
 
 **Figure**: *Example of an image with an important signal loss on several slices* 
 
+Some brain anomalies (as cavernome) can also lead to signal loss. 
+
+![fMRI signal loss 2](images/qc_fmri_signal_loss_2.png "fMRI signal loss 2")
+
+**Figure**: *Example of an image with a brain anomalie that leads to a signal loss* 
+
+
 #### C.  Excessive spatial distortions of the brain (susceptibility artifact)
 
 Look at the first mosaic in the report ("Voxel-wise average of BOLD time-series, zoomed-in covering just the brain").
@@ -316,11 +323,13 @@ This map can also be use to check whether eye movements have an impact on the br
 
 Note that during pre-processing, it is very common to perform a realignment to correct movement between volumes. It is therefore not necessary to exclude the image below a certain threshold. 
 
-#### F. Aliasing artifact that impacts the brain
+#### F. Aliasing artifact ("phase wrap-around") that impacts the brain
 
 When the size of the object (head) exceeds the defined field of view, an aliasing artefact can be observed (part of the head that is visible on the opposite end of the image). 
 
 The aliasing artefact may be visible on the standard deviation map ("Standard deviation of signal through time" mosaic) or on the "average signal through time" mosaic or sometimes on the "view of the background of the voxel-wise average of the BOLD timeseries" mosaic.
+
+The wrap-around artifact is a folding over of anatomic parts into the area of interest (generally more severe along the phase-encode axis).
 
 If the aliasing do not impact the brain, it seems not necessary to exclude the image.
 
@@ -330,14 +339,16 @@ If the aliasing do not impact the brain, it seems not necessary to exclude the i
 
 WIP: ADD OTHER EXAMPLE 
 
-#### G. Background noise or ghost artifact with an impact on the brain
+#### G. Nyquist N/2 ghost artifact with an impact on the brain
 
-The background of the image should not contain any visible structures (as there is no BOLD signal in the background). A ghost artefact is a type of structured noise that appears as shifted and weakly repeated versions of the main object, usually in the direction of the phase encoding. These artefacts are often exacerbated by head movement.
+The background of the image should not contain any visible structures (as there is no BOLD signal in the background). A ghost artefact is a type of structured noise that appears as shifted and weakly repeated versions of the main object, usually in the direction of the phase encoding. These artefacts are often exacerbated by head movement. The Nyquist ghost appears as a faint, duplicate copy of the brain that is shifted by half the field of view in the phase-encoding direction. 
 
 Look at the "view of the background of the voxel-wise average of the BOLD timeseries" mosaic. It may also be useful to look at the standard deviation map ("Standard deviation of signal through time" mosaic).
 If the background artefact is slight and does not spill over into the brain, there is no need to exclude the image. 
 
-WIP: ADD EXAMPLE 
+![fMRI nyquist](images/qc_fmri_nyquist.png "fMRI nyquist")
+
+**Figure**: *Example of Nyquist N/2 Ghost Artifact (https://mriquestions.com/nyquist-n2-ghosts.html)* 
 
 #### H. Unexpected anatomical anomalies/pathologies not covered by the protocol
 
@@ -395,6 +406,7 @@ The cause of this artefact is not obvious. This does not necessarily mean that t
     - [Provins, Céline and all. “Quality Control in Functional MRI Studies with MRIQC and fMRIPrep.” Frontiers in Neuroimaging 1 (2023).](https://www.frontiersin.org/articles/10.3389/fnimg.2022.1073734)
 
         **Note that this guide was inspired by this article.**
+
     - [Teves, Joshua B. and all “The Art and Science of Using Quality Control to Understand and Improve fMRI Data.” Frontiers in Neuroscience 17 (2023).]( https://www.frontiersin.org/articles/10.3389/fnins.2023.1100544.)
 
 - Automatic quality control:
