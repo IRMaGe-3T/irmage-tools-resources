@@ -7,7 +7,7 @@ Please note that this resources are not exhaustive.
 - [IMAIOS e-MRI](https://www.imaios.com/fr/e-mri): basic online course about MRI
 - [Questions and Answers in MRI](https://www.mriquestions.com/index.html): advanced information about MRI
 
-## Gerneral information about neuroimaging studies 
+## General information about neuroimaging studies 
 - Article: [Recommendations for the implementation of multicenter studies with MRI](https://www.em-consulte.com/article/1446634/recommandations-pour-la-mise-en-place-d-etudes-mul) (in French)
 - Article: [Longitudinal multi-centre brain imaging studies: guidelines and practical tips for accurate and reproducible imaging endpoints and data sharing](https://www.ncbi.nlm.nih.gov/pmc/articles/PMC6323670/)
 
@@ -20,7 +20,7 @@ Please note that this resources are not exhaustive.
 
 ## Data sharing and data format
 - [openNeuro](https://openneuro.org/): a free platform to share BIDS-compilant data. 
-- [ida loni](https://ida.loni.usc.edu): acess to several database such as ADNI, ABIDE, PMI
+- [ida loni](https://ida.loni.usc.edu): access to several database such as ADNI, ABIDE, PMI
 - [BIDS](https://bids.neuroimaging.io/): a standardized format for organizing and describing neuroimaging data and study outputs. See also [here](BIDS.md)
 - [dcm2niix](https://github.com/rordenlab/dcm2niix): conversion of DICOM into NIfTI format (and with a json file for each NIfTI).
 
@@ -30,7 +30,7 @@ Please note that this resources are not exhaustive.
 - [mrview](https://mrtrix.readthedocs.io/en/latest/reference/commands/mrview.html): MRTrix image viewer
 
 ## General information about neuroimaging software
-- [Neuroimaging Tools & Resources Collaboratory (NITRC)](https://www.nitrc.org/) : a website that offers comprehensive information on an ever expanding scope of neuroinformatics software and data. You can find a lot of software and usefull link in the Resources Registry part. 
+- [Neuroimaging Tools & Resources Collaboratory (NITRC)](https://www.nitrc.org/) : a website that offers comprehensive information on an ever expanding scope of neuroinformatics software and data. You can find a lot of software and useful link in the Resources Registry part. 
 - [Neurostars](https://neurostars.org/) :  a question and answer forum for neuroscience researchers, infrastructure providers and software developers. 
 
 ## Software suite

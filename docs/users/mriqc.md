@@ -33,7 +33,7 @@ Pull the latest version of the MRIQC container from Docker Hub:
 docker pull nipreps/mriqc:latest
 ```
 
-Notes: depending on how docker is installed on your computer you may need administrator rights to pull and use the imgage
+Notes: depending on how docker is installed on your computer you may need administrator rights to pull and use the image
 
 Check the MRIQC version:
 

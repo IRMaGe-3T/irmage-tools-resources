@@ -8,7 +8,7 @@
 
 - Connect to [Github web interface](https://github.com/)
 
-- Go to **Settings** page (the menu at the top right), then in **Developer seetings** and finally in **Personal access tokens** 
+- Go to **Settings** page (the menu at the top right), then in **Developer settings** and finally in **Personal access tokens** 
 
 - Create a token by clicking on **Generate new token** in **Tokens (classic)**. Give a name. 
 
@@ -70,6 +70,6 @@ It is one way to apply a pull request (there are others !!!)
     * Git push # answer the login_name/passwd. Your changes are now in your remote server's fork (for ex. in  servoz/populse_mia and in your branch, for ex. in inProgress)
 
 8. Finally, you must go through the project's web interface to create the pull-request from your fork (for ex. servoz/populse_mia) inProgress branch to the master branch of the reference repository (for ex. populse/populse_mia):
-    * In the web page of your fork inProgress branch, click on the "New pull request" button. Write or complet the title and the comment fields. Then, finnaly, click the green button "Create pull request"
+    * In the web page of your fork inProgress branch, click on the "New pull request" button. Write or complete the title and the comment fields. Then, finnaly, click the green button "Create pull request"
 
 9. Actually, now, take in one hand the bible, in other a very big candle and wait for the deliberation of the reviewer ...

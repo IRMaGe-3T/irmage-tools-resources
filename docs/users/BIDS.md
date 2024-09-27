@@ -70,7 +70,7 @@ Example for one subject with one session :
 |   |   |   ├──sub-0010001AA_ses-M00_run-1_dwi.json
 ```
 
-Note that there is specific recomendation for [field map data](https://bids-specification.readthedocs.io/en/stable/04-modality-specific-files/01-magnetic-resonance-imaging-data.html#fieldmap-data) and for [ASL data](https://bids-specification.readthedocs.io/en/stable/04-modality-specific-files/01-magnetic-resonance-imaging-data.html#arterial-spin-labeling-perfusion-data).
+Note that there is specific recommendation for [field map data](https://bids-specification.readthedocs.io/en/stable/04-modality-specific-files/01-magnetic-resonance-imaging-data.html#fieldmap-data) and for [ASL data](https://bids-specification.readthedocs.io/en/stable/04-modality-specific-files/01-magnetic-resonance-imaging-data.html#arterial-spin-labeling-perfusion-data).
 
 ## Validate BIDS folder
 
@@ -136,7 +136,7 @@ Run dcm2bids: `dcm2bids -d DICOM_DIR -p PARTICIPANT_ID -c CONFIG_FILE -o OUTPUT_
 
 If your config file is precise enough, your data should be now organized in BIDS.
 
-You can check the data not renamed (and so not integreted in your BIDS databse) in the `tmp_dcm2bids` folder create in the OUTOUT_DIR.
+You can check the data not renamed (and so not integreted in your BIDS database) in the `tmp_dcm2bids` folder create in the OUTOUT_DIR.
 If you want to included some of this data in your BIDS database you should add more crietria in your config file. 
 
 #### How to do in practice for a big dataset ? 

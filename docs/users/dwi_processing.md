@@ -136,7 +136,7 @@ The following maps depend only on the Kurtosis tensor:
 
 Good to know: 
 
--  To use DKI, multi-shell data are needed (at least 3 shells, one can be b = 0 s/mm² and at least 15 differnet directions)
+-  To use DKI, multi-shell data are needed (at least 3 shells, one can be b = 0 s/mm² and at least 15 different directions)
 -  The effects of Kurtosis diffusion are more visible for values of b > 1500 s/mm²
 -  DKI is sensitive to noise and artefacts. For example, it can be incorrectly estimated and have negative values in regions where radial diffusivity is low.
 - To avoid physically impossible DKI values, a constrained fit can be used to estimate DKI (see [here](https://docs.dipy.org/stable/examples_built/reconstruction/reconst_dki.html#constrained-optimization-for-dki))
@@ -194,10 +194,10 @@ imaging of the human brain. Neuroimage 61, 1000–1016. https://doi.org/10.1016/
 - Andica, C., 2019b. Scan-rescan and inter-vendor reproducibility of neurite orientation
 dispersion and density imaging metrics. Neuroradiology. https://doi.org/10.1007/s00234-01902350-6.
 - Chung, A.W., Seunarine, K.K., Clark, C.A., 2016. NODDI reproducibility and variability
-with magnetic field strength: a comparison between 1.5 T and 3 T. Hum. Brain Mapp. 37,
+with magnetic field strength: a comparison between 1.5 T and 3 T. Hum. Brain Map. 37,
 4550–4565. https://doi.org/10.1002/hbm.23328.
 
-NODDI (Neurite Orientation Dispersion and Density Imaging) is a biophysical model which aims to characterize the microstructure within a voxel by providing information on neutrites density and on the dispersion of the orientation using 3 parametres: 
+NODDI (Neurite Orientation Dispersion and Density Imaging) is a biophysical model which aims to characterize the microstructure within a voxel by providing information on neutrites density and on the dispersion of the orientation using 3 parameters: 
 
 - Intra-cellular volume fraction (ICVF) = neurite density index (NDI): quantifies the neutrites density /estimates the volume fraction of neurites
 - Orientation dispersion index (ODI): estimates the variability of neurite orientation (from 0 to 1 with 0 = all perfectly aligned and 1 = completely isotropic)
@@ -211,7 +211,7 @@ Some of the model's assumptions are debated within the community, for example:
 
 #### Example of tools 
 
-- [Orginal Matlab Toolbox](http://mig.cs.ucl.ac.uk/index.php?n=Tutorial.NODDImatlab)
+- [Original Matlab Toolbox](http://mig.cs.ucl.ac.uk/index.php?n=Tutorial.NODDImatlab)
 
 - Accelerated Microstructure Imaging via Convex Optimization ([AMICO](https://github.com/daducci/AMICO))
 

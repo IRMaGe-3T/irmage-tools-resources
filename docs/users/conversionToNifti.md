@@ -11,10 +11,10 @@ Manufacturers publish DICOM conformance statement for each modality (for example
 DICOM file are composed of 2 parts: 
 
 - the image data (sometime compressed)
-- the header that contains the metadata. In this part you can find tags fabout the scanner, the subject or the acquistions parameters. Note that each manufacturer has private tags that are not necessarily specified in the standard.
+- the header that contains the metadata. In this part you can find tags fabout the scanner, the subject or the acquisitions parameters. Note that each manufacturer has private tags that are not necessarily specified in the standard.
 
 For "Classic DICOM" files, there is a DICOM file for each slice of the volume.  
-You can aslo have "Enhanced DICOM" files and in this case, all the slices of the volume are stored in one DICOM file. The header is not structured in the same way for Enhanced and Classic DICOM.
+You can also have "Enhanced DICOM" files and in this case, all the slices of the volume are stored in one DICOM file. The header is not structured in the same way for Enhanced and Classic DICOM.
 
 
 ### Others Philips data

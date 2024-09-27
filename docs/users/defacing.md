@@ -1,8 +1,8 @@
 # Defacing 
 
-For research project on human, it is important to de-identify MRI data and metadata (no identifying data as name, date of birth, adresses...). 
+For research project on human, it is important to de-identify MRI data and metadata (no identifying data as name, date of birth, addresses...). 
 
-If your want to share your data outside your lab or outside a consortium, this deidentification can be insuffisante because anatomical data may allow to identify a subject (by reconstructing the skin surface). Indentification of a person from a anatmical MRI was shown to be a feasible task (for e.g, [Abramian, D (2019)](https://ieeexplore.ieee.org/document/8759515)).
+If your want to share your data outside your lab or outside a consortium, this deidentification can be insuffisante because anatomical data may allow to identify a subject (by reconstructing the skin surface). Identification of a person from a anatmical MRI was shown to be a feasible task (for e.g, [Abramian, D (2019)](https://ieeexplore.ieee.org/document/8759515)).
 
 Three main approaches for face de-identification have been proposed: 
 
@@ -28,7 +28,7 @@ There are severals de-identification software: [mri_deface](https://surfer.nmr.m
 
 Some face de-identification software can struggle with some images and can remove brain voxels. So it is important to do a quality check of the defecing results. 
 Note that, not all software give the same result according to the poulation (young, elderly person...).
-If the defacing of a image or of a cohort worked poorly with one software, it can be usefull to test others.
+If the defacing of a image or of a cohort worked poorly with one software, it can be useful to test others.
 
 ## AFNI @afni_refacer_run
 
@@ -44,7 +44,7 @@ Reface and deface images are obtainded and QC images are created to check the re
 
 ## BIDSonym
 
-[BIDSonym](https://peerherholz.github.io/BIDSonym/index.html) is a BIDS App suppporting several defacing software (mri_deface, ptdeface, quickshear, mridefacer).
+[BIDSonym](https://peerherholz.github.io/BIDSonym/index.html) is a BIDS App supporting several defacing software (mri_deface, ptdeface, quickshear, mridefacer).
 
 BIDSonym works only with input data in [BIDS](BIDS.md) format.
 

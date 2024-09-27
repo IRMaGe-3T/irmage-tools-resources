@@ -21,7 +21,7 @@ This list is not exhaustive. If you are planning to analyse your data acquired o
 |**Quality control**            |                                                             |
 | MRIQC                         | https://mriqc.readthedocs.io/                               |
 |                               |                                                             |
-|**Strutural MRI (sMRI)**       |                                                             |
+|**Structural MRI (sMRI)**       |                                                             |
 | SPM                           | https://www.fil.ion.ucl.ac.uk/spm/docs/tutorials/vbm/       |
 | VolBrain Assemblynet          | https://github.com/volBrain/AssemblyNet                     |
 |                               |                                                             |

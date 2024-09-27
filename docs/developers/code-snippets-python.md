@@ -26,7 +26,7 @@ def fix_xyzt_units(bids_root):
 fix_xyzt_units('path/to/your/bids/root')
 ```
 
-### Set repetion time in the NIfTI header using json file (BIDS format)
+### Set repetition time in the NIfTI header using json file (BIDS format)
 
 I want the repetition time in the NIfTI file header (pixdim[4]) to be equal to the value found in the associated json file:
 

@@ -41,7 +41,7 @@ Here is a non-exhaustive list of things that are useful to check:
 
 - Checking that the DICOM files are complete. In "classic" mode, a DICOM file is generated for each acquired image (slice, dynamic, echo, etc.) and so there are several DICOM files for one sequence. In "Enhanced" mode, a single file is generated for each sequence (with a certain size limit). In classic mode, it is possible that an export or transfer error results in missing some DICOM files, and thus some images. It may be useful to check the size of the images converted to NIfTI to highlight such problems. This check can also be done during the visual inspection of the images.
 
-- Verification of the main acquisition parameters. Some parameter modifications may have been made during the course of the study and may influence the analyses (e.g., modification of repetion time following an upgrade of the MRI software). Here is a non-exhaustive list of the parameters that may be useful to check: echo time, repetition time, voxel size, number of repetitions for functional MRI, parallel imaging... Depending on the sequence, certain parameters are more important to check than others.
+- Verification of the main acquisition parameters. Some parameter modifications may have been made during the course of the study and may influence the analyses (e.g., modification of repetition time following an upgrade of the MRI software). Here is a non-exhaustive list of the parameters that may be useful to check: echo time, repetition time, voxel size, number of repetitions for functional MRI, parallel imaging... Depending on the sequence, certain parameters are more important to check than others.
 
 
 ## QC of anatomical and functional data with MRIQC
@@ -142,7 +142,7 @@ Susceptibility artefacts due to the non-uniformity of the field are mainly prese
 
 Look at the first mosaic in the report ("Zoomed-in mosaic view of the brain"). 
 
-If there are stong eyes movements, an overlap of the eye signal in the brain may be observed. If the overlap is strong and/ or impacts regions of interest, it may be necessary to exclude the image.
+If there are strong eyes movements, an overlap of the eye signal in the brain may be observed. If the overlap is strong and/ or impacts regions of interest, it may be necessary to exclude the image.
 
 ![T1w eye spillover](images/qc_eye_spillover.png "T1w eye spillover")
 
@@ -198,7 +198,7 @@ Look at the first mosaic in the report ("Zoomed-in mosaic view of the brain").
 
 This may reveal anomalies not anticipated by the protocol (tumor, trace of a stroke).
 
-/!\ Nothe that it is not the role of a non-medical person to detect anomaly and that it is difficult to "name" the anomaly correctly without special medical training. The aim of this stage is simply to exclude images with anomalies that could cause problems in the subsequent analyses and/or to exclude subjects (for example if we want to make an atlas of healthy subjects). **This step is in no way a diagnosis and should not be communicated to the subject without medical advice. In case of doubt, contact the doctor in charge of the study.** 
+/!\ Note that it is not the role of a non-medical person to detect anomaly and that it is difficult to "name" the anomaly correctly without special medical training. The aim of this stage is simply to exclude images with anomalies that could cause problems in the subsequent analyses and/or to exclude subjects (for example if we want to make an atlas of healthy subjects). **This step is in no way a diagnosis and should not be communicated to the subject without medical advice. In case of doubt, contact the doctor in charge of the study.** 
 
 #### L. Other artifacts
 
@@ -220,7 +220,7 @@ Some artefacts are characteristic of EPI sequences:
 
 - Phantom images in the phase encoding direction. These are due to the fact that the odd and even lines in k-space are acquired with opposite polarity. Certain acquisition techniques can help to reduce the extent of these effects. 
 
-We propose a list of criteria that may lead to the exclusion of an functional image. This list may need to be adjusted according to the study criteria and the planned analyses (specif ROI...). 
+We propose a list of criteria that may lead to the exclusion of an functional image. This list may need to be adjusted according to the study criteria and the planned analyses (specific ROI...). 
 
 Some criteria are based on the images available in the MRIQC report (mean signal, standard deviation map, alignment in MNI, carpet plot, etc.). Other criteria can be used by simply viewing the image in a viewer.
 
@@ -313,7 +313,7 @@ If there are sudden movements, this will also have an effect on the carpet plot 
 **Figure**: *Example of a carpetplot of a subject with movements*
 
 You can also look at the standard deviation map ("Standard deviation of signal through time").
-If a subject move a lot between the acquistion of the different volume, the standard deviation will be higher (yellow) around the brain. 
+If a subject move a lot between the acquisition of the different volume, the standard deviation will be higher (yellow) around the brain. 
 
 ![fMRI movements sdt](images/qc_fmri_movements_2.png "fMRI movements std")
 
@@ -356,7 +356,7 @@ Look at the first mosaic in the report.
 
 This may reveal anomalies not anticipated by the protocol (tumour, trace of a stroke).
 
-/!\ Nothe that it is not the role of a non-medical person to detect anomaly and that it is difficult to "name" the anomaly correctly without special medical training. The aim of this stage is simply to exclude images with anomalies that could cause problems in the subsequent analyses and/or to exclude subjects (for example if we want to make an atlas of healthy subjects). **This step is in no way a diagnosis and should not be communicated to the patient without medical advice. In case of doubt, contact the doctor in charge of the study.**  
+/!\ Note that it is not the role of a non-medical person to detect anomaly and that it is difficult to "name" the anomaly correctly without special medical training. The aim of this stage is simply to exclude images with anomalies that could cause problems in the subsequent analyses and/or to exclude subjects (for example if we want to make an atlas of healthy subjects). **This step is in no way a diagnosis and should not be communicated to the patient without medical advice. In case of doubt, contact the doctor in charge of the study.**  
 
 #### I. Other artifacts
 
@@ -387,7 +387,7 @@ The standard deviation map should not show any particular "patterns". If this is
 
 ![fMRI std map 2](images/qc_fmri_std_map_2.png "fMRI std map 2")
 
-**Figure**: **A**: *Example of a subject with a pattern on the standard deviation map (here the repetition of the brain, probabely because of parallele imaging technic used during the acquisition)* **B**: *Example of a subject without artifact on the standard deviation map*
+**Figure**: **A**: *Example of a subject with a pattern on the standard deviation map (here the repetition of the brain, probably because of parallele imaging technique used during the acquisition)* **B**: *Example of a subject without artifact on the standard deviation map*
 
 ##### "Bright" outliers
 
@@ -397,7 +397,7 @@ The cause of this artefact is not obvious. This does not necessarily mean that t
 
 **Figure**: *Example of a subject with "bright" outliers* **A**: *Carpetplot from MRIQC report* **B**: *Sagittal and coronal plan*
 
-## Ressources
+## Resources
 
 ### Bibliography (non-exhaustive)
 
@@ -419,13 +419,13 @@ The cause of this artefact is not obvious. This does not necessarily mean that t
 
     - [Bastaiani Matteo and all. "Automated quality control for within and between studies diffusion MRI data using a non-parametric framework for movement and distortion correction"](https://www.sciencedirect.com/science/article/pii/S1053811918319451)
 
-### Sofware (non-exhaustive)
+### Software (non-exhaustive)
 
 #### Quality control of rawdata
 
 - [MRIQC](https://mriqc.readthedocs.io): for functional and anatomical data
 - [VisualQC](https://raamana.github.io/visualqc/readme.html)
-- [CONN toolbox](https://web.conn-toolbox.org/): possibilty to do QC for functional MRI
+- [CONN toolbox](https://web.conn-toolbox.org/): possibility to do QC for functional MRI
 
 #### Quality control of processed data
 
