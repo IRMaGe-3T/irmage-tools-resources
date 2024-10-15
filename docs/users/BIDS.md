@@ -143,19 +143,17 @@ If you want to included some of this data in your BIDS database you should add m
 
 There are several methods to run dcm2bids quickly on several subjects, here is one:
 
-- Organise your DICOM data as follows (where "subject1" is the desired name in the BIDS architecture): 
+- Organise your DICOM data as follows (where "subject1" is the desired name in the BIDS architecture and "V1" / "V2" are the sessions names): 
 ```
 ├──DICOM_sourcedata/
-|   ├──subject1/
-|   |   ├──01/
-|   |   |   ├──DICOM/
-|   |   ├──02/
-|   |   |   ├──DICOM/
-|   ├──subject2/
-|   |   ├──01/
-|   |   |   ├──DICOM/
-|   |   ├──02/
-|   |   |   ├──DICOM/
+|   ├──subject1_V1/
+|   |   ├──DICOM/
+|   ├──subject1_V2/
+|   |   ├──DICOM/
+|   ├──subject2_V1/
+|   |   ├──DICOM/
+|   ├──subject2_V2/
+|   |   ├──DICOM/
 ```
 
 - Create your config file, your BIDS directory and structure as explain above. 
