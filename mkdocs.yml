@@ -12,7 +12,7 @@ nav:
       - Defacing: users/defacing.md
       - Dwi processing: users/dwi_processing.md
       - Tips Philips scanner: users/tips_philips.md
-      - GRICAD cluster: users/gicad_cluster.md 
+      - GRICAD cluster: users/gricad_cluster.md 
     - 'Tutorials POPULSE MIA':
       - POPULSE: populse_mia_tutorial/populse.md
       - fMRI analysis: populse_mia_tutorial/populse_mia_fMRI.md
