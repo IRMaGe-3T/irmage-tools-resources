@@ -11,7 +11,8 @@ nav:
       - Quality Control - A step-by-step proposal: users/QC_guide.md
       - Defacing: users/defacing.md
       - Dwi processing: users/dwi_processing.md
-      - Tips Philips scanner: users/tips_philips.md 
+      - Tips Philips scanner: users/tips_philips.md
+      - GRICAD cluster: users/gicad_cluster.md 
     - 'Tutorials POPULSE MIA':
       - POPULSE: populse_mia_tutorial/populse.md
       - fMRI analysis: populse_mia_tutorial/populse_mia_fMRI.md

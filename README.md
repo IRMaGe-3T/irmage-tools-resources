@@ -12,6 +12,6 @@ Please note that this wiki did not aim to be self-sufficient, it is always a goo
 
 * Add or modify [markdown](https://daringfireball.net/projects/markdown/) (.md) files 
 
-* Add new files in `index.md` and update the `nav` (navigation) part of `mkdocs.yml` file.
+* Update the `nav` (navigation) part of `mkdocs.yml` file.
 
 * Commit and push your modifications. The documentation will automatically update thanks to ReadTheDocs. 
