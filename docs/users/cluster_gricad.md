@@ -89,21 +89,33 @@ Open the copied script.
 
 `login-perseus@f-dahu:~$ nano /bettik/PROJECTS/pr-irmage/login-perseus/run_mriqc_studyXX.sh`
 
-At least two lines need to be modified:
+Several lines need to be modified:
 
 - `export DATA=/bettik/PROJECTS/pr-irmage/perseus-login/DATA_BIDS`: add the correct path to your data on bettik
 
-- `#OAR -l /nodes=1,walltime=26:00:00`: specify the desired parameters (nodes / CPU, walltime...). 
+- `#OAR --stdout /bettik/PROJECTS/pr-irmage/perseus-login/DATA_BIDS/derivatives/fMRIprep.out`: path to a file with out information (could be in your derivatives directory)
+
+- `#OAR --stderr /bettik/PROJECTS/pr-irmage/perseus-login/DATA_BIDS/derivatives/fMRIprep.err`:  path to a file with potential error(could be in your derivatives directory)
  
-OAR parametres will depend on your number of subjects / number of sequences. Check [gricad documentation](https://gricad-doc.univ-grenoble-alpes.fr/hpc/joblaunch/job_management/#commandes-oar-de-gestion-des-jobs) to chose –l parameter and walltime.
+- `#OAR -l /nodes=1,walltime=26:00:00`: specify the desired parameters (nodes / CPU, walltime...). 
+
+You can also change the main command (for exemple if you want to run only one subject or if you want to run only bold or anat for MRIQC).In this case, please refer to MRIQC and fMRIPrep documentation. 
+ 
+Nodes / CPU parametres will depend on your number of subjects / number of sequences. Check [gricad documentation](https://gricad-doc.univ-grenoble-alpes.fr/hpc/joblaunch/job_management/#commandes-oar-de-gestion-des-jobs) to chose –l parameter and walltime.
 
 *OAR parameters example for MRIQC:*
 
-- TO ADD
+- for 4 subjects with one session and with 5 fMRI each: #OAR -l /CPU=2/core=12,walltime=01:00:00
+
 
 *OAR parameters example for fMRIPrep:*
 
-- TO ADD
+- for one subject with one fMRI: #OAR -l /CPU=16,walltime=02:00:00
+
+- Please see [fMRIPrep recommendation](https://fmriprep.org/en/stable/faq.html#how-much-cpu-time-and-ram-should-i-allocate-for-a-typical-fmriprep-run)
+
+- /!\ It seems that [running subject in parrallel could be an issue](https://fmriprep.org/en/stable/faq.html#running-subjects-in-parallel). In this case you can try to use the proposed solution.
+
 
 Then you need to make the script executable:
 
@@ -123,7 +135,9 @@ Or:
 
 `login-perseus@f-dahu:~$ oarstat –u login-perseus`
 
-It will give you information about state (waiting/ in progress / finishing), scheduledStart..  
+It will give you information about state (waiting/ running / finishing), scheduledStart.
+
+If there are errors while the spcript is running, you will find the errors in the `.err` file.
 
 **6. Download your results**
 
