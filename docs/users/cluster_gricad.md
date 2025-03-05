@@ -99,7 +99,7 @@ Several lines need to be modified:
  
 - `#OAR -l /nodes=1,walltime=26:00:00`: specify the desired parameters (nodes / CPU, walltime...). 
 
-You can also change the main command (for exemple if you want to run only one subject or if you want to run only bold or anat for MRIQC).In this case, please refer to MRIQC and fMRIPrep documentation. 
+You can also change the main command (for exemple if you want to run only one subject or if you want to run only bold or anat for MRIQC). In this case, please refer to MRIQC and fMRIPrep documentation. 
  
 Nodes / CPU parametres will depend on your number of subjects / number of sequences. Check [gricad documentation](https://gricad-doc.univ-grenoble-alpes.fr/hpc/joblaunch/job_management/#commandes-oar-de-gestion-des-jobs) to chose –l parameter and walltime.
 
