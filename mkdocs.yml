@@ -9,6 +9,7 @@ nav:
       - BIDS: users/BIDS.md
       - Quality Control - MRIQC: users/mriqc.md
       - Quality Control - A step-by-step proposal: users/QC_guide.md
+      - Physio data - HRV: users/hrv.md
       - Defacing: users/defacing.md
       - Dwi processing: users/dwi_processing.md
       - Tips Philips scanner: users/tips_philips.md 

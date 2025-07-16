@@ -158,7 +158,7 @@ There are several methods to run dcm2bids quickly on several subjects, here is o
 
 - Create your config file, your BIDS directory and structure as explain above. 
 
-- Use the python code in the [IRMaGE-3T github repository](https://github.com/IRMaGe-3T/irmage-tools/blob/main/data_management/bids_data_with_dcm2bids.py): 
+- Use the python code from the [IRMaGE-3T github repository](https://github.com/IRMaGe-3T/irmage-tools/blob/main/data_management/bids_data_with_dcm2bids.py): 
 ```
     python bids_data_with_dcm2bids.py -s /DICOM_sourcedata/ -o /output_bids_direcory/ -c config_file_dcm2bids.jsob
 ```
