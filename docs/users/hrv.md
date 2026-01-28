@@ -58,7 +58,7 @@ For example:
 
 ## Philips system - ScanPhysLog file
 
-At IRMaGe, it is possible to record physiological data during MRI acquisition using the photoplethysmographic unit (PPU) of the Philips Achieva MRI scanner. The PPU measures the hemodynamic pulse at the fingertip.
+At IRMaGe, it is possible to record physiological data during MRI acquisition using the PPU of the Philips Achieva MRI scanner. The PPU measures the hemodynamic pulse at the fingerprint.
 
 For each sequence, a ScanPhysLog file is generated, containing both the PPU signal (sampled at 500 Hz) and the MR gradient triggers.
 
