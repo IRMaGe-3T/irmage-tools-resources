@@ -13,6 +13,7 @@ This list is not exhaustive. If you are planning to analyse your data acquired o
 | POPULSE MIA                   | https://populse.github.io/populse_mia                       |
 | BrainVisa                     | https://brainvisa.info                                      |
 | Nipype                        | https://nipype.readthedocs.io                               |
+| Skrypy                        | https://montigno.github.io/skrypy-pyqt6                     |
 |                               |                                                             |
 | **Data conversion**           |                                                             |
 | mri_conv                      | https://populse.github.io/mri_conv                          |
@@ -21,7 +22,7 @@ This list is not exhaustive. If you are planning to analyse your data acquired o
 |**Quality control**            |                                                             |
 | MRIQC                         | https://mriqc.readthedocs.io/                               |
 |                               |                                                             |
-|**Structural MRI (sMRI)**       |                                                             |
+|**Structural MRI (sMRI)**       |                                                            |
 | SPM                           | https://www.fil.ion.ucl.ac.uk/spm/docs/tutorials/vbm/       |
 | VolBrain Assemblynet          | https://github.com/volBrain/AssemblyNet                     |
 |                               |                                                             |
@@ -29,7 +30,7 @@ This list is not exhaustive. If you are planning to analyse your data acquired o
 | MRTrix                        | https://mrtrix.readthedocs.io                               |
 | QSIPrep                       | https://qsiprep.readthedocs.io                              |
 | dipy*                         | https://docs.dipy.org/1.8.0/                                |
-| FSL DTIFIT                    | https://fsl.fmrib.ox.ac.uk/fsl/fslwiki/FDT/UserGuide#DTIFIT |
+| FSL DTIFIT*                    | https://fsl.fmrib.ox.ac.uk/fsl/fslwiki/FDT/UserGuide#DTIFIT |
 | TractSeg                      | https://github.com/MIC-DKFZ/TractSeg                        |
 | AFQ                           | https://yeatmanlab.github.io/pyAFQ/                         |
 | AMICO                         | https://github.com/daducci/AMICO                            |
@@ -38,7 +39,8 @@ This list is not exhaustive. If you are planning to analyse your data acquired o
 | SPM                           | https://www.fil.ion.ucl.ac.uk/spm/docs/tutorials/fmri/      |
 | fMRIPrep                      | https://fmriprep.org/                                       |
 | nilearn*                      | https://nilearn.github.io                                   |
-|                               |                                                             |
+| CONN toolbox                  | https://web.conn-toolbox.org/                               |
+| 
 |**Spectroscopy**               |                                                             |
 | Gannet*                       | https://github.com/richardedden/gannet3.1                   |
 |                               |                                                             |
@@ -46,6 +48,8 @@ This list is not exhaustive. If you are planning to analyse your data acquired o
 | ExploreASL                    | https://exploreasl.github.io                                |
 |**Quantitative MRI**           |                                                             |
 | hMRI toolbox                  | https://hmri-group.github.io                                |
+|**Others**                     |                                                             |
+| LeadDBS*                       | https://www.lead-dbs.org/                                   |
 
 
 **basic knowledge* 
